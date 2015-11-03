@@ -59,6 +59,13 @@ After you done, export configuration and commit/push changes.
 
 ## Working with d8-starter
 
+### Branches
+
+- core (https://github.com/AmazeeLabs/d8-starter/tree/core)  
+  Contains the current 8.x.x core we're using with our core patches applied
+- dev (https://github.com/AmazeeLabs/d8-starter/tree/dev)  
+  Our actual starter site with beaker, contrib modules, config, etc.
+
 ### Working on dev server
 
 After you made any configuration change run `drush config-export -y` and commit/push changes. Also, don't forget to review/commit/push any code changes you (or someone) had made.
@@ -75,10 +82,21 @@ After you made any configuration change run `drush config-export -y` and commit/
 
 ### Merging newest Drupal 8 upstream
 
+1. Checkout core branch  
+`git checkout core`
 1. Add Drupal Git Repository as remote  
 `git remote add drupal http://git.drupal.org/project/drupal.git`
 1. Fetch tags  
 `git fetch --tags drupal`
-1. Merge  
+1. Merge drupal into core branch  
 `git merge drupal/8.0.0-rc2`
-
+1. Fix maybe existing merge conflicts because of core patches
+1. Publish core branch  
+`git push origin core`
+1. Switch to dev branch  
+`git checkout dev`
+1. Merge core branch into dev branch  
+`git merge core`
+1. Test site still working
+1. Publish dev branch  
+`git push origin dev`
