@@ -1,0 +1,50 @@
+# This file contains default .gitignore rules. To use it, copy it to .gitignore,
+# and it will cause files like your settings.php and user-uploaded files to be
+# excluded from Git version control. This is a common strategy to avoid
+# accidentally including private information in public repositories and patch
+# files.
+#
+# Because .gitignore can be specific to your site, this file has a different
+# name; updating Drupal core will not override your custom .gitignore file.
+
+# Ignore core and vendor when managing dependencies with Composer.
+# core
+# vendor
+
+# Ignore configuration files that may contain sensitive information.
+sites/*/settings.local.php
+sites/*/services.local.yml
+
+# Ignore paths that contain user-generated content.
+sites/*/files
+sites/*/private
+
+# Ignore SimpleTest multi-site environment.
+sites/simpletest
+
+# Custom
+._
+.idea
+.DS_Store
+
+# Ignore the node modules folder (created by 'npm install').
+/node_modules
+
+# Ignore bower packages
+/libraries
+
+# We absolutely don't want to have the .sass-cache in git.
+.sass-cache
+
+# Ignore .map files
+*.css.map
+css/map
+
+# Ignore css files from custom themes
+/themes/*/css/*.*
+
+# Ignore domain file
+domain.json
+
+# Ignore npm debugs
+npm-debug.log

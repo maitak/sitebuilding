@@ -1,0 +1,20 @@
+uuid: 2956b466-563b-4690-b300-cab56ae1a6c2
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - beaker
+id: beaker_login
+theme: beaker
+region: header
+weight: 0
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  provider: user
+  label_display: visible
+visibility: {  }

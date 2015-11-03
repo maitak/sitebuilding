@@ -1,0 +1,10 @@
+uuid: 13360a54-745b-4873-8c00-d44482695f74
+langcode: en
+status: true
+dependencies: {  }
+id: feedback
+label: 'Website feedback'
+recipients:
+  - technology+d8-starter@amazeelabs.com
+reply: ''
+weight: 0

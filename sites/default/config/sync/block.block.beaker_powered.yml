@@ -1,0 +1,20 @@
+uuid: 046a9069-f49e-490a-9340-64f15430d349
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - beaker
+id: beaker_powered
+theme: beaker
+region: header
+weight: 10
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

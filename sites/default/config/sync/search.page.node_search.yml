@@ -1,0 +1,13 @@
+uuid: bed012db-8215-4a33-a000-cff0d7ab873a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_search
+label: Content
+path: node
+weight: -10
+plugin: node_search
+configuration:
+  rankings: {  }

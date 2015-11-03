@@ -1,0 +1,16 @@
+base:
+  version: VERSION
+  css:
+    theme:
+      css/styles.css: {}
+  js:
+    js/jquery.countdown.min.js: {}
+    js/jquery.sidr.js: {}
+    js/jquery.selectric.js: {}
+    js/superfish.js: {}
+    js/sfsmallscreen.js: {}
+    js/sftouchscreen.js: {}
+    js/hsg.behaviors.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

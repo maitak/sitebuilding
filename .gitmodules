@@ -1,0 +1,36 @@
+[submodule "modules/contrib/devel"]
+	path = modules/contrib/devel
+	url = http://git.drupal.org/project/devel.git
+[submodule "modules/contrib/admin_toolbar"]
+	path = modules/contrib/admin_toolbar
+	url = http://git.drupal.org/project/admin_toolbar.git
+[submodule "modules/contrib/token"]
+	path = modules/contrib/token
+	url = http://git.drupal.org/project/token.git
+[submodule "modules/contrib/pathauto"]
+	path = modules/contrib/pathauto
+	url = http://git.drupal.org/project/pathauto.git
+[submodule "modules/contrib/ctools"]
+	path = modules/contrib/ctools
+	url = http://git.drupal.org/project/ctools.git
+[submodule "modules/contrib/page_manager"]
+	path = modules/contrib/page_manager
+	url = http://git.drupal.org/project/page_manager.git
+[submodule "modules/contrib/layout_plugin"]
+	path = modules/contrib/layout_plugin
+	url = http://git.drupal.org/project/layout_plugin.git
+[submodule "modules/contrib/field_group"]
+	path = modules/contrib/field_group
+	url = http://git.drupal.org/project/field_group.git
+[submodule "modules/contrib/metatag"]
+	path = modules/contrib/metatag
+	url = http://git.drupal.org/project/metatag.git
+[submodule "modules/contrib/redirect"]
+	path = modules/contrib/redirect
+	url = git@github.com:md-systems/redirect.git
+[submodule "modules/contrib/git_deploy"]
+	path = modules/contrib/git_deploy
+	url = http://git.drupal.org/project/git_deploy.git
+[submodule "modules/contrib/link_css"]
+	path = modules/contrib/link_css
+	url = http://git.drupal.org/project/link_css.git	

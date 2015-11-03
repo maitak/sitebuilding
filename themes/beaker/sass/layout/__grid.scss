@@ -1,0 +1,16 @@
+// BORDER BOX
+// =============================================================================
+@include border-box-sizing;
+
+
+// CONFIGURE SUSY 2 GLOBAL DEFAULTS
+// =============================================================================
+// $susy: (
+//   use-custom: (rem: true)
+// );
+
+$susy: (
+  columns: 12,
+  gutters: 20px/60px,
+  column-width: 60px,
+);

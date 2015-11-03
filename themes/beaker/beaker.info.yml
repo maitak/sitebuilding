@@ -1,0 +1,13 @@
+name: beaker
+type: theme
+base theme: classy
+description: 'beaker theme.'
+package: Core
+core: 8.x
+libraries:
+  - beaker/base
+stylesheets-remove:
+regions:
+  header: Header
+  content: Content
+  footer: Footer
