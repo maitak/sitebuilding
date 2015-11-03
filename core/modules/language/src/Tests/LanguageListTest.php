@@ -45,6 +45,8 @@ class LanguageListTest extends WebTestBase {
     );
     $this->drupalPostForm('admin/config/regional/language/add', $edit, t('Add language'));
     $this->assertText('French', 'Language added successfully.');
+    $this->rebuildContainer();
+    \Drupal::service('router.builder')->rebuild();
     $this->assertUrl(\Drupal::url('entity.configurable_language.collection', [], ['absolute' => TRUE]));
 
     // Get the weight of the last language and check that the weight is one unit
@@ -154,6 +156,8 @@ class LanguageListTest extends WebTestBase {
       'direction' => Language::DIRECTION_LTR,
     );
     $this->drupalPostForm('admin/config/regional/language/add', $edit, t('Add custom language'));
+    $this->rebuildContainer();
+    \Drupal::service('router.builder')->rebuild();
     $this->assertUrl(\Drupal::url('entity.configurable_language.collection', [], ['absolute' => TRUE]));
     $this->assertText($name, 'Name found.');
 
