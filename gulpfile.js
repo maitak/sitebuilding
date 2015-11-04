@@ -6,15 +6,6 @@
 
 var themes_folder = 'themes';
 
-// switch(process.env.AMAZEEIO_DRUPAL_VERSION) {
-//     case '8':
-//         var themes_folder = 'themes';
-//         break;
-//     case '7':
-//     default:
-//         var themes_folder = 'sites/all/themes';
-// }
-
 /**
 * Gulp specific config
 */
