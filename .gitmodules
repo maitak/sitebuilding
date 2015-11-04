@@ -34,3 +34,15 @@
 [submodule "modules/contrib/link_css"]
 	path = modules/contrib/link_css
 	url = http://git.drupal.org/project/link_css.git	
+[submodule "modules/contrib/paragraphs"]
+	path = modules/contrib/paragraphs
+	url = git://git.drupal.org/project/paragraphs.git
+[submodule "modules/contrib/entity_reference_revisions"]
+	path = modules/contrib/entity_reference_revisions
+	url = git://git.drupal.org/project/entity_reference_revisions.git
+[submodule "modules/contrib/features"]
+	path = modules/contrib/features
+	url = git://git.drupal.org/project/features.git
+[submodule "modules/contrib/config_update"]
+	path = modules/contrib/config_update
+	url = git://git.drupal.org/project/config_update.git
