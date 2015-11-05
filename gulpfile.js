@@ -33,7 +33,10 @@ var gulp          = require('gulp'),
     filter        = require('gulp-filter'),
     colors        = require('colors'),
     jshint        = require('gulp-jshint'),
-    fs            = require('fs');
+    fs            = require('fs'),
+    imagemin      = require('gulp-imagemin'),
+    pngquant      = require('imagemin-pngquant'),
+    imageminSvgo  = require('imagemin-svgo');
 
 
 /* Set paths */
@@ -200,6 +203,21 @@ gulp.task('test', function() {
       scroll: true
     }
   });
+});
+
+
+/* Gulp Image optimization task*/
+gulp.task('images', function() {
+    return gulp.src(path.img + '/*')
+    .pipe(imagemin({
+        progressive: true,
+        interlaced: true,
+        multipass: true,
+        svgoPlugins: [{removeViewBox: false}],
+        use: [pngquant()]
+    }))
+    .pipe(imageminSvgo()())
+    .pipe(gulp.dest(path.img + '/'));
 });
 
 
