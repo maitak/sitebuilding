@@ -208,7 +208,7 @@ gulp.task('test', function() {
 
 /* Gulp Image optimization task*/
 gulp.task('images', function() {
-    return gulp.src(path.img + '/*')
+    return gulp.src(path.img + '/**/*')
     .pipe(imagemin({
         progressive: true,
         interlaced: true,
@@ -242,6 +242,7 @@ gulp.task('help', function () {
   console.log('gulp watch'.yellow+'\t\trun with browserSync extension');
   console.log('gulp compile'.yellow+'\t\tcompile SASS for local/dev enviroment');
   console.log('gulp build'.yellow+'\t\tcompile SASS for live/staging enviroment');
+  console.log('gulp images'.yellow+'\t\trun Optimizes Images in beaker');
   console.log('gulp jshint'.yellow+'\t\ttool that helps to detect errors & problems');
   console.log('gulp test'.yellow+'\t\trun Gulp test enviroment');
   console.log("\nOptions for watch task:".underline);
