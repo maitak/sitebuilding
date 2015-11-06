@@ -34,6 +34,7 @@ var gulp          = require('gulp'),
     colors        = require('colors'),
     jshint        = require('gulp-jshint'),
     fs            = require('fs');
+    duration      = require('gulp-duration');
 
 
 /* Set paths */
@@ -43,16 +44,6 @@ path.js     = path.theme + path.js;
 path.img    = path.theme + path.img;
 path.tpl    = path.theme + path.tpl;
 
-
-/* Get domain from environment variables */
-// fs.stat('./domain.json', function(err, stat) {
-//     console.log('Error: ' + err);
-//     if(err == null) {
-//         var domain        = require('./domain.json');
-//     } else {
-//         var domain        = process.env.AMAZEEIO_SITE_URL;
-//     }
-// });
 
 if( fs.existsSync('./domain.json') ) {
     var domain        = require('./domain.json');
@@ -78,12 +69,16 @@ gulp.task('sass', function () {
     .pipe(sourcemaps.init())
     .pipe(globbing({ extensions: ['.scss'] }))
     .pipe(sass.sync().on('error', sass.logError))
+    .pipe(duration('SASS compilation finished'))
     .pipe(postcss(processors))
+    .pipe(duration('postCSS finished'))
     .pipe(sourcemaps.write('./map'))
+    .pipe(duration('created sourcemap files'))
     .pipe(gulp.dest('./' + path.css))
     .pipe(filter([path.css + '/**/*.css', '!' + path.css + '/animate.css']))
     .pipe(browserSync.reload({stream: true}))
     .pipe(filter([path.css + '/**/*.css', '!' + path.css + '/animate.css']))
+    .pipe(duration('moved all files to /css folder'));
 });
 
 
@@ -96,12 +91,16 @@ gulp.task('sass-compile', function () {
     .pipe(sourcemaps.init())
     .pipe(globbing({ extensions: ['.scss'] }))
     .pipe(sass.sync().on('error', sass.logError).on('error', process.exit.bind(process, 1)))
+    .pipe(duration('SASS compilation finished'))
     .pipe(postcss(processors))
+    .pipe(duration('postCSS finished'))
     .pipe(sourcemaps.write('./map'))
+    .pipe(duration('created sourcemap files'))
     .pipe(gulp.dest('./' + path.css))
     .pipe(filter([path.css + '/**/*.css', '!' + path.css + '/animate.css']))
     .pipe(browserSync.reload({stream: true}))
     .pipe(filter([path.css + '/**/*.css', '!' + path.css + '/animate.css']))
+    .pipe(duration('moved all files to /css folder'));
 });
 
 
