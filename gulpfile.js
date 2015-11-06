@@ -33,7 +33,7 @@ var gulp          = require('gulp'),
     filter        = require('gulp-filter'),
     colors        = require('colors'),
     jshint        = require('gulp-jshint'),
-    fs            = require('fs');
+    fs            = require('fs'),
     duration      = require('gulp-duration');
 
 
