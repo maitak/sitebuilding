@@ -79,6 +79,7 @@ After you made any configuration change run `drush config-export -y` and commit/
 1. TODO: we need more info about `drush config-merge`
 1. Export configuration, commit/push the changes
 1. On dev: pull the changes and import the configuration
+1. Remember to git submodule update --init to pull in modules (modules/contrib)
 
 ### Merging newest Drupal 8 upstream
 
