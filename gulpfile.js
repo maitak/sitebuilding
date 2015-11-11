@@ -208,7 +208,7 @@ gulp.task('test', function() {
 
 /* Gulp Image optimization task*/
 gulp.task('images', function() {
-    return gulp.src(path.img + '/**/*')
+    return gulp.src(path.img + '/**/*.{png,gif,jpg,jpeg,svg}')
     .pipe(imagemin({
         progressive: true,
         interlaced: true,
