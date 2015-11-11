@@ -1,7 +1,7 @@
 name: Beaker 1.0.4
 type: theme
 base theme: classy
-description: 'Amazee Labs Beaker Theme'
+description: 'Custom Theme made by Amazee Labs'
 package: Core
 core: 8.x
 libraries:
