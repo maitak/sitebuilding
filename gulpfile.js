@@ -34,7 +34,10 @@ var gulp          = require('gulp'),
     colors        = require('colors'),
     jshint        = require('gulp-jshint'),
     fs            = require('fs'),
-    duration      = require('gulp-duration');
+    duration      = require('gulp-duration'),
+    imagemin      = require('gulp-imagemin'),
+    pngquant      = require('imagemin-pngquant'),
+    imageminSvgo  = require('imagemin-svgo');
 
 
 /* Set paths */
@@ -128,59 +131,30 @@ gulp.task('build', ['sass-build']);
 
 /* Gulp browserSync init task*/
 gulp.task('browser-sync', function() {
-  if (util.env.ghostmode && util.env.open) {
-    return browserSync.init(null, {
-      proxy: domain,
-      startPath: "",
-      files: path.css + '/*.css',
-      notify: false,
-      logConnections: true,
-      reloadOnRestart: true,
-      ghostMode: {
-        clicks: true,
-        forms: true,
-        scroll: true
-      }
-    });
-  } else if(util.env.ghostmode) {
-    if (util.env.ghostmode) {
-      return browserSync.init(null, {
-        proxy: domain,
-        open: false,
-        startPath: "",
-        files: path.css + '/*.css',
-        notify: false,
-        logConnections: true,
-        reloadOnRestart: true,
-        ghostMode: {
-          clicks: true,
-          forms: true,
-          scroll: true
-        }
-      });
-    }
-  } else if(util.env.open) {
-    return browserSync.init(null, {
-      proxy: domain,
-      ghostMode: false,
-      startPath: "",
-      files: path.css + '/*.css',
-      notify: false,
-      logConnections: true,
-      reloadOnRestart: true
-    });
-  } else {
-    return browserSync.init(null, {
-      proxy: domain,
-      open: false,
-      ghostMode: false,
-      startPath: "",
-      files: path.css + '/*.css',
-      notify: false,
-      logConnections: true,
-      reloadOnRestart: true
-    });
+  var vghostmode = false;
+  var vopen = false;
+
+  if(util.env.ghostmode) {
+    var vghostmode = true;
   }
+  if(util.env.open) {
+    var vopen = true;
+  }
+
+  return browserSync.init(null, {
+    proxy: domain,
+    startPath: "",
+    files: path.css + '/*.css',
+    open: vopen,
+    notify: false,
+    logConnections: true,
+    reloadOnRestart: true,
+    ghostMode: {
+      clicks: vghostmode,
+      forms: vghostmode,
+      scroll: vghostmode
+    }
+  });
 });
 
 
@@ -199,6 +173,21 @@ gulp.task('test', function() {
       scroll: true
     }
   });
+});
+
+
+/* Gulp Image optimization task*/
+gulp.task('images', function() {
+    return gulp.src(path.theme + '/**/*.{png,gif,jpg,jpeg,svg}')
+    .pipe(imagemin({
+        progressive: true,
+        interlaced: true,
+        multipass: true,
+        svgoPlugins: [{removeViewBox: false}],
+        use: [pngquant()]
+    }))
+    .pipe(imageminSvgo()())
+    .pipe(gulp.dest(path.theme + '/'));
 });
 
 
@@ -223,6 +212,7 @@ gulp.task('help', function () {
   console.log('gulp watch'.yellow+'\t\trun with browserSync extension');
   console.log('gulp compile'.yellow+'\t\tcompile SASS for local/dev enviroment');
   console.log('gulp build'.yellow+'\t\tcompile SASS for live/staging enviroment');
+  console.log('gulp images'.yellow+'\t\trun Optimizes Images in beaker');
   console.log('gulp jshint'.yellow+'\t\ttool that helps to detect errors & problems');
   console.log('gulp test'.yellow+'\t\trun Gulp test enviroment');
   console.log("\nOptions for watch task:".underline);
