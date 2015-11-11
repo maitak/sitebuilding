@@ -57,7 +57,19 @@ Review the configuration pages to see if some information (like the site name) s
 
 After you done, export configuration and commit/push changes.
 
-## Working with d8-starter
+## Updating a Drupal 8 installation based on d8-starter
+
+### Make sure you have d8-starter available as a remote
+1. Do this once:  
+`git remote add d8-starter git@github.com:AmazeeLabs/d8-starter.git`
+
+### Apply d8-starter changes 
+1. Fetch updates from d8-starter  
+`git fetch d8-starter`
+1. Merge changes into your Drupal 8 installation's dev  
+`git merge d8-starter/dev`
+
+## Working on d8-starter
 
 ### Branches
 
