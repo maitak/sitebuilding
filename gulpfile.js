@@ -208,7 +208,7 @@ gulp.task('test', function() {
 
 /* Gulp Image optimization task*/
 gulp.task('images', function() {
-    return gulp.src(path.img + '/**/*.{png,gif,jpg,jpeg,svg}')
+    return gulp.src(path.theme + '/**/*.{png,gif,jpg,jpeg,svg}')
     .pipe(imagemin({
         progressive: true,
         interlaced: true,
@@ -217,7 +217,7 @@ gulp.task('images', function() {
         use: [pngquant()]
     }))
     .pipe(imageminSvgo()())
-    .pipe(gulp.dest(path.img + '/'));
+    .pipe(gulp.dest(path.theme + '/'));
 });
 
 
