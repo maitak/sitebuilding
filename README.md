@@ -20,6 +20,8 @@ This installation is used as a base for new Amazee Drupal 8 installations. Unlik
 `git remote set-url origin <REPOSITORY_URL>`
 1. Push the code  
 `git push`
+1. Add the Tech Team to the repository
+`https://github.com/AmazeeLabs/<REPOSITORY_URL>/settings/collaboration`
 
 ### Prepare environment
 
@@ -43,7 +45,6 @@ The following commands should be executed from the root of the newly created rep
 `rm README.md`  
 or replace its contents with relevant information  
 `echo 'Repository for the <SITENAME>.' > README.md`
-1. Update sitename and Git URL in the sites/default/aliases.drushrc.php
 1. Commit and push changes  
 `git add . && git commit -m '<TICKET-123> Prepared <SITENAME> installation' && git push`
 
