@@ -20,8 +20,8 @@ This installation is used as a base for new Amazee Drupal 8 installations. Unlik
 `git remote set-url origin <REPOSITORY_URL>`
 1. Push the code  
 `git push`
-1. Add the Tech Team to the repository
-`https://github.com/AmazeeLabs/<REPOSITORY_URL>/settings/collaboration`
+1. Add the Tech Team to the repository on Github
+`https://github.com/AmazeeLabs/<SITENAME>/settings/collaboration`
 
 ### Prepare environment
 
