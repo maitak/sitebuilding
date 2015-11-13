@@ -57,6 +57,11 @@ if(getenv('AMAZEEIO_SITENAME')){
   );
 }
 
+### Base URL
+if (getenv('AMAZEEIO_SITE_URL')) {
+  $base_url = 'http://' . getenv('AMAZEEIO_SITE_URL');
+}
+
 // Settings for all environments
 if (file_exists(__DIR__ . '/settings.all.php')) {
   include __DIR__ . '/settings.all.php';
