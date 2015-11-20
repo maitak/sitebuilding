@@ -1,6 +1,6 @@
 {
   "name": "beaker-theme",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Amazee Labs Standard Theme",
   "main": "gulpfile.js",
   "devDependencies": {
@@ -12,14 +12,22 @@
     "csswring": ">=4.0.0",
     "gulp": ">=3.9.0",
     "gulp-css-globbing": ">=0.1.8",
+    "gulp-duration": "0.0.0",
     "gulp-filter": ">=3.0.1",
+    "gulp-imagemin": "^2.4.0",
     "gulp-jshint": ">=1.11.2",
     "gulp-postcss": ">=6.0.1",
     "gulp-sass": "==2.0.4",
     "gulp-sourcemaps": ">=1.6.0",
     "gulp-util": ">=3.0.6",
     "jshint-stylish": ">=2.0.1",
-    "stream-browserify": ">=2.0.1"
+    "stream-browserify": ">=2.0.1",
+    "gulp-imagemin": "^2.4.0",
+    "imagemin-pngquant": "^4.2.0",
+    "imagemin-svgo": "^4.1.2"
+  },
+  "optionalDependencies": {
+    "fsevents": ">=1.0.5"
   },
   "scripts": {
     "postinstall": "find node_modules/ -name '*.info' -type f -delete; bower install --force",
@@ -28,12 +36,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AmazeeLabs/Standard-Theme.git"
+    "url": "https://github.com/AmazeeLabs/d8-starter.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AmazeeLabs/Standard-Theme/issues"
+    "url": "https://github.com/AmazeeLabs/d8-starter/issues"
   },
-  "homepage": "https://github.com/AmazeeLabs/Standard-Theme"
+  "homepage": "https://github.com/AmazeeLabs/d8-starter"
 }

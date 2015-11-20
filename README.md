@@ -20,6 +20,8 @@ This installation is used as a base for new Amazee Drupal 8 installations. Unlik
 `git remote set-url origin <REPOSITORY_URL>`
 1. Push the code  
 `git push`
+1. Add the Tech Team to the repository on Github
+`https://github.com/AmazeeLabs/<SITENAME>/settings/collaboration`
 
 ### Prepare environment
 
@@ -43,7 +45,6 @@ The following commands should be executed from the root of the newly created rep
 `rm README.md`  
 or replace its contents with relevant information  
 `echo 'Repository for the <SITENAME>.' > README.md`
-1. Update sitename and Git URL in the sites/default/aliases.drushrc.php
 1. Commit and push changes  
 `git add . && git commit -m '<TICKET-123> Prepared <SITENAME> installation' && git push`
 
@@ -57,7 +58,19 @@ Review the configuration pages to see if some information (like the site name) s
 
 After you done, export configuration and commit/push changes.
 
-## Working with d8-starter
+## Updating a Drupal 8 installation based on d8-starter
+
+### Make sure you have d8-starter available as a remote
+1. Do this once:  
+`git remote add d8-starter git@github.com:AmazeeLabs/d8-starter.git`
+
+### Apply d8-starter changes 
+1. Fetch updates from d8-starter  
+`git fetch d8-starter`
+1. Merge changes into your Drupal 8 installation's dev  
+`git merge d8-starter/dev`
+
+## Working on d8-starter
 
 ### Branches
 
@@ -79,6 +92,7 @@ After you made any configuration change run `drush config-export -y` and commit/
 1. TODO: we need more info about `drush config-merge`
 1. Export configuration, commit/push the changes
 1. On dev: pull the changes and import the configuration
+1. Remember to git submodule update --init to pull in modules (modules/contrib)
 
 ### Merging newest Drupal 8 upstream
 

@@ -9,7 +9,7 @@
 	url = http://git.drupal.org/project/token.git
 [submodule "modules/contrib/pathauto"]
 	path = modules/contrib/pathauto
-	url = http://git.drupal.org/project/pathauto.git
+	url = git@github.com:md-systems/pathauto.git
 [submodule "modules/contrib/ctools"]
 	path = modules/contrib/ctools
 	url = http://git.drupal.org/project/ctools.git

@@ -4,13 +4,8 @@ base:
     theme:
       css/styles.css: {}
   js:
-    js/jquery.countdown.min.js: {}
-    js/jquery.sidr.js: {}
-    js/jquery.selectric.js: {}
-    js/superfish.js: {}
-    js/sfsmallscreen.js: {}
-    js/sftouchscreen.js: {}
-    js/hsg.behaviors.js: {}
+    js/behaviors.js: {}
+    js/jquery.browser.min.js: {}
   dependencies:
     - core/jquery
     - core/drupal
