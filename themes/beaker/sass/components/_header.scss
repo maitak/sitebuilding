@@ -2,7 +2,7 @@
 // LOGO STYLES
 // =============================================================================
 
-#logo {
+.site-logo {
   float: left;
   display: block;
   width: 200px;
@@ -21,7 +21,7 @@
 // SITE NAME & SLOGAN
 // =============================================================================
 
-#name-and-slogan {
+.block-system-branding-block {
   @include clearfix;
 
   a {
@@ -32,18 +32,18 @@
 }
 
 //Site name
-#site-name {
+.site-name {
 
 }
 
 //Site slogan
-#site-slogan {
+.site-slogan {
 
 }
 
 // HEADER STYLES
 // =============================================================================
 
-header {
+.header {
 
 }
