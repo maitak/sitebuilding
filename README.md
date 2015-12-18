@@ -72,6 +72,7 @@ After you done, export configuration and commit/push changes.
 1. Merge changes into your Drupal 8 installation's dev  
 `git merge d8-starter/core`
 1. Update Drupal database (inside Vagrant)
+
 `drush updb`
 
 ## Working on d8-starter
