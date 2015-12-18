@@ -12,7 +12,8 @@ This installation is used as a base for new Amazee Drupal 8 installations. Unlik
 
 1. Clone the d8-starter repository  
 `git clone git@github.com:AmazeeLabs/d8-starter.git <PATH/TO/NEW/LOCATION>`
-1. Update and sync sub-modules`git submodule update --init && git submodule sync`
+1. Update and sync sub-modules  
+`git submodule update --init && git submodule sync`
 1. go to the newly created folder  
 `cd <PATH/TO/NEW/LOCATION>`
 1. At [github.com/organizations/AmazeeLabs/repositories/new](https://github.com/organizations/AmazeeLabs/repositories/new) create a new private repository.
