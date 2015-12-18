@@ -70,7 +70,7 @@ After you done, export configuration and commit/push changes.
 1. Fetch updates from d8-starter  
 `git fetch d8-starter`
 1. Merge changes into your Drupal 8 installation's dev  
-`git merge d8-starter/dev`
+`git merge d8-starter/core`
 
 ## Working on d8-starter
 
@@ -105,7 +105,7 @@ After you made any configuration change run `drush config-export -y` and commit/
 1. Fetch tags  
 `git fetch --tags drupal`
 1. Merge drupal into core branch  
-`git merge drupal/8.0.0-rc2`
+`git merge 8.0.1`
 1. Fix maybe existing merge conflicts because of core patches
 1. Publish core branch  
 `git push origin core`
