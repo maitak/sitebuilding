@@ -95,7 +95,7 @@ After you made any configuration change run `drush config-export -y` and commit/
 1. Export configuration, commit/push the changes
 1. To get your changes on dev: wait for the deployment, import the configuration
 
-### <a name="update-starter-core">Merging newest Drupal 8 upstream
+### <a name="update-starter-core">Updating Drupal core
 
 1. Checkout core branch  
 `git fetch && git checkout -b core origin/core 2> /dev/null || git checkout core && git pull`
@@ -117,3 +117,12 @@ After you made any configuration change run `drush config-export -y` and commit/
 `git push origin dev`
 1. Wait for the deployment to happen (see [#missioncontrol](https://amazee.slack.com/messages/missioncontrol/) Slack channel)
 1. Run `drush updb` at the @dev server
+
+### Updating pre-installed contrib modules
+
+1. Get list of available updates  
+  `drush up -n`
+1. Check which modules should be updated (if a contrib module uses dev version, `drush up` may falsely report that update is required like `7.x-2.2+9-dev > 8.x-2.x-dev`, in this case, it's better to update the module manually)
+1. Run updates for certain modules  
+  `drush up <MODULE1> <MODULE2> <...> -y`
+1. Commit/push changes (run `drush updb` on Dev, if you did the above in Vagrant)
