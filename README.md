@@ -80,7 +80,7 @@ After you done, export configuration and commit/push changes.
 - core (https://github.com/AmazeeLabs/d8-starter/tree/core)  
   Contains the current 8.x.x core we're using with our core patches applied
 - dev (https://github.com/AmazeeLabs/d8-starter/tree/dev)  
-  Our actual starter site with beaker, contrib modules, config, etc.
+  Our actual starter site with beaker, cointrib modules, config, etc.
 
 ### Working on dev server
 
@@ -88,19 +88,17 @@ After you made any configuration change run `drush config-export -y` and commit/
 
 ### Working on Vagrant
 
-1. If `d8-starter_io` local Vagrant environment is not yet prepared, do it [as usual](http://confluence.amazeelabs.com/display/KNOWLEDGE/Amazee.IO+Vagrant), so clone this repository, set mountings, and reload Vagrant.
-1. Pull the newest code and sync the database with `drush sql-sync @dev1.compact default`
+1. If `d8-starter_io` local Vagrant environment is not yet prepared, do it [as usual](http://confluence.amazeelabs.com/display/KNOWLEDGE/Amazee.IO+Vagrant), so clone this repository, initialize submodules, set mountings, and reload Vagrant.
+1. Pull the newest code and sync the database with `drush sql-sync @dev1 default`
 1. Rebuild cache with `drush cr`
 1. Do your changes
-1. TODO: we need more info about `drush config-merge`
 1. Export configuration, commit/push the changes
-1. On dev: pull the changes and import the configuration
-1. Remember to git submodule update --init to pull in modules (modules/contrib)
+1. To get your changes on dev: wait for the deployment, import the configuration
 
 ### <a name="update-starter-core">Merging newest Drupal 8 upstream
 
 1. Checkout core branch  
-`git checkout core`
+`git fetch && git checkout -b core origin/core 2> /dev/null || git checkout core && git pull`
 1. Add Drupal Git Repository as remote  
 `git remote add drupal http://git.drupal.org/project/drupal.git`
 1. Fetch tags  
