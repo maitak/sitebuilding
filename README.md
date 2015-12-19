@@ -1,12 +1,18 @@
 # Amazee Drupal 8 Starter
 
+How to:
+
+- [create new project](#user-content-create-new)
+- [update existing project](#user-content-update-existing)
+- [work with d8-starter (improve, update, etc.)](#user-content-improve-starter)
+
 The DEV site could be found at [d8-starter.io.dev.dev1.compact.amazee.io](http://d8-starter.io.dev.dev1.compact.amazee.io/) (user 1 login: `admin`, password: `D8rules!!!`)
 
 This website is pre-configured to meet most of our usual needs on new projects.
 
 This installation is used as a base for new Amazee Drupal 8 installations. Unlike the [Drupal 7 process](https://github.com/AmazeeLabs/new-site.com#readme), the database of this installation is not used. Instead, we import already prepared configuration to a new installation.
 
-## Creating new Drupal 8 installation from d8-starter
+## <a name="create-new"></a>Creating new Drupal 8 installation from d8-starter
 
 ### Prepare repository
 
@@ -60,22 +66,20 @@ Review the configuration pages to see if some information (like the site name) s
 
 After you done, export configuration and commit/push changes.
 
-## Updating a Drupal 8 installation based on d8-starter
+##  <a name="update-existing"></a>Updating a Drupal 8 installation based on d8-starter
 
-### Make sure you have d8-starter available as a remote
-1. Do this once:  
+1. Make sure that d8-starter is updated to the latest Drupal core version, if it's not, [update it first](#user-content-update-starter-core)
+1. Make sure you have d8-starter available as a remote  
 `git remote add d8-starter git@github.com:AmazeeLabs/d8-starter.git`
+1. Apply d8-starter changes 
+  1. Fetch updates from d8-starter  
+  `git fetch d8-starter`
+  1. Merge changes into your Drupal 8 installation's dev  
+  `git merge d8-starter/core`
+  1. Update Drupal database (inside Vagrant)  
+  `drush updb`
 
-### Apply d8-starter changes 
-1. Fetch updates from d8-starter  
-`git fetch d8-starter`
-1. Merge changes into your Drupal 8 installation's dev  
-`git merge d8-starter/core`
-1. Update Drupal database (inside Vagrant)
-
-`drush updb`
-
-## Working on d8-starter
+##  <a name="improve-starter"></a>Working on d8-starter
 
 ### Branches
 
@@ -99,7 +103,7 @@ After you made any configuration change run `drush config-export -y` and commit/
 1. On dev: pull the changes and import the configuration
 1. Remember to git submodule update --init to pull in modules (modules/contrib)
 
-### Merging newest Drupal 8 upstream
+### <a name="update-starter-core">Merging newest Drupal 8 upstream
 
 1. Checkout core branch  
 `git checkout core`
@@ -116,6 +120,8 @@ After you made any configuration change run `drush config-export -y` and commit/
 `git checkout dev`
 1. Merge core branch into dev branch  
 `git merge core`
-1. Test site still working
+1. Run `drush updb` in Vagrant and test site still working
 1. Publish dev branch  
 `git push origin dev`
+1. Wait for the deployment to happen (see [#missioncontrol](https://amazee.slack.com/messages/missioncontrol/) Slack channel)
+1. Run `drush updb` at the @dev server
