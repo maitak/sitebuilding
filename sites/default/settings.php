@@ -95,4 +95,4 @@ if (file_exists(__DIR__ . '/services.local.yml')) {
 
 // Keep "install_profile" here so it's not added by "drush site-install" again
 // and again.
-$settings['install_profile'] = 'standard';
+$settings['install_profile'] = 'config_installer';
