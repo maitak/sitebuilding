@@ -97,6 +97,8 @@ After you made any configuration change run `drush config-export -y` and commit/
 
 ### <a name="update-starter-core">Updating Drupal core
 
+Do this in the Vagrant!
+
 1. Checkout core branch  
 `git fetch && git checkout -b core origin/core 2> /dev/null || git checkout core && git pull`
 1. Add Drupal Git Repository as remote  
