@@ -1,13 +1,11 @@
 module:
-  automated_cron: 0
+  admin_toolbar: 0
+  admin_toolbar_tools: 0
   block: 0
   block_content: 0
   breakpoint: 0
   ckeditor: 0
-  color: 0
-  comment: 0
   config: 0
-  contact: 0
   contextual: 0
   datetime: 0
   dblog: 0
@@ -18,7 +16,6 @@ module:
   file: 0
   filter: 0
   help: 0
-  history: 0
   image: 0
   link: 0
   menu_ui: 0
