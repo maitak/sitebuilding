@@ -42,13 +42,7 @@ The following commands should be executed from the root of the newly created rep
 1. Update `$settings['hash_salt']` in `sites/default/settings.all.php` (go to http://www.miniwebtool.com/sha512-hash-generator/ enter some random text, use generated hash)
 1. Update `sites/default/aliases.drushrc.php` with the GIT Repo and the Sitename (given by Bastian or Michi)
 1. Install Drupal  
-`drush site-install --keep-config` (this will take some minutes)
-1. Prepare the configuration to be imported  
-`drush php-script profiles/amazee/config_prepare.php`
-1. Import configuration  
-`drush config-import`  
-1. Remove helper script  
-`rm -rf profiles/amazee`
+`drush site-install config_installer` (this will take some minutes)
 1. Remove this file (README.md)  
 `rm README.md`  
 or replace its contents with relevant information  
