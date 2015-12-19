@@ -46,3 +46,6 @@
 [submodule "modules/contrib/config_update"]
 	path = modules/contrib/config_update
 	url = git://git.drupal.org/project/config_update.git
+[submodule "profiles/config_installer"]
+	path = profiles/config_installer
+	url = git://git.drupal.org/project/config_installer.git
