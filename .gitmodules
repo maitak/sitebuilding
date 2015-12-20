@@ -40,12 +40,6 @@
 [submodule "modules/contrib/entity_reference_revisions"]
 	path = modules/contrib/entity_reference_revisions
 	url = git://git.drupal.org/project/entity_reference_revisions.git
-[submodule "modules/contrib/features"]
-	path = modules/contrib/features
-	url = git://git.drupal.org/project/features.git
-[submodule "modules/contrib/config_update"]
-	path = modules/contrib/config_update
-	url = git://git.drupal.org/project/config_update.git
 [submodule "profiles/config_installer"]
 	path = profiles/config_installer
 	url = git://git.drupal.org/project/config_installer.git
