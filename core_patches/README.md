@@ -7,7 +7,7 @@ If you going to update the core: check this file, probably some patches should b
 # Current core patches
 
 - Adds language redirect.  
-  2c92235f951d7fbc0e73a6d28ef598006506af02 https://www.drupal.org/node/2430335#comment-10153038  
+  3e08344b607bb20e74ce36a7cf497fdcd3f8d269 https://www.drupal.org/node/2430335#comment-10153038  
   Should be reverted before updating to a release having [#2430335](https://www.drupal.org/node/2430335) committed.
 
 # Additional stuff to check before core update
