@@ -28,8 +28,7 @@ TBD (Ask Michael or Bastian for now)
 
 The following commands should be executed from the root of the newly created repository being logged in as a newly created bash user in the vagrant/dev.
 
-1. Update `$settings['hash_salt']` in `sites/default/settings.all.php` (go to http://www.miniwebtool.com/sha512-hash-generator/ enter some random text, use generated hash)
-1. Update `sites/default/aliases.drushrc.php` with the GIT Repo and the Sitename (given by Bastian or Michi)
+1. Update `sites/default/aliases.drushrc.php` with the GIT Repo and the Sitename (given by Bastian or Michi) (if it is already the site_name you are already good)
 1. Install Drupal  
 `drush site-install config_installer` (this will take some minutes)
 1. Remove this file (README.md)  
