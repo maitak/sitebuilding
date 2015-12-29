@@ -1,6 +1,7 @@
 // Import breakpoint & Susy the new way
 @import "libraries/breakpoint-sass/stylesheets/breakpoint";
 @import "libraries/susy/sass/susy";
+@import "libraries/animate-scss/src/_animate.scss";
 
 // Import variables, abstractions, base styles and components using globbing.
 //
@@ -19,3 +20,4 @@
 @import "1_helpers/*";
 @import "2_base/*";
 @import "3_pages/*";
+
