@@ -20,15 +20,15 @@ This installation is used as a base for new Amazee Drupal 8 installations. Unlik
 3. The new repository will be available under `github.com/AmazeeLabs/$REPO_NAME`
 
 
-### Prepare environment
+### Prepare server environment
 
-TBD (Ask Michael or Bastian for now)
+Ask Bastian or Michael for now - Create a Ticket in your Jira project and assign it to one of them.
 
 ### Install site
 
 The following commands should be executed from the root of the newly created repository being logged in as a newly created bash user in the vagrant/dev.
 
-1. Update `sites/default/aliases.drushrc.php` with the GIT Repo and the Sitename (given by Bastian or Michi) (if it is already the site_name you are already good)
+1. Update `sites/default/aliases.drushrc.php` with the GIT Repo and the Sitename (given by Bastian or Michi) *(if it is already the site_name you are already good)*
 1. Install Drupal  
 `drush site-install config_installer` (this will take some minutes)
 1. Remove this file (README.md)  
@@ -53,7 +53,7 @@ After you done, export configuration and commit/push changes.
 1. Make sure that d8-starter is updated to the latest Drupal core version, if it's not, [update it first](#user-content-update-starter-core)
 1. Make sure you have d8-starter available as a remote  
 `git remote add d8-starter git@github.com:AmazeeLabs/d8-starter.git`
-1. Apply d8-starter changes 
+1. Apply d8-starter changes
   1. Fetch updates from d8-starter  
   `git fetch d8-starter`
   1. Merge changes into your Drupal 8 installation's dev  
