@@ -15,21 +15,10 @@ This installation is used as a base for new Amazee Drupal 8 installations. Unlik
 ## <a name="create-new"></a>Creating new Drupal 8 installation from d8-starter
 
 ### Prepare repository
+1. Prepare the Drupal 8 repository via [Jenkins](http://jenkins.amazee.io/job/AmazeeIO-SetupD8Github/build?delay=0sec)
+2. use the future website url as repo_name i.e. example.com will get example_com (this makes it much easier for everyone to find the project)
+3. The new repository will be available under `github.com/AmazeeLabs/$REPO_NAME`
 
-1. Clone the d8-starter repository  
-`git clone git@github.com:AmazeeLabs/d8-starter.git <PATH/TO/NEW/LOCATION>`
-1. Go to the newly created folder  
-`cd <PATH/TO/NEW/LOCATION>`
-1. Update and sync sub-modules  
-`git submodule update --init && git submodule sync`
-1. At [github.com/organizations/AmazeeLabs/repositories/new](https://github.com/organizations/AmazeeLabs/repositories/new) create a new private repository.
-1. Copy the Git URL of the newly created repository
-1. Update the URL of the cloned repository  
-`git remote set-url origin <REPOSITORY_URL>`
-1. Push the code  
-`git push`
-1. Add the Tech Team to the repository on Github
-`https://github.com/AmazeeLabs/<SITENAME>/settings/collaboration`
 
 ### Prepare environment
 
@@ -39,8 +28,7 @@ TBD (Ask Michael or Bastian for now)
 
 The following commands should be executed from the root of the newly created repository being logged in as a newly created bash user in the vagrant/dev.
 
-1. Update `$settings['hash_salt']` in `sites/default/settings.all.php` (go to http://www.miniwebtool.com/sha512-hash-generator/ enter some random text, use generated hash)
-1. Update `sites/default/aliases.drushrc.php` with the GIT Repo and the Sitename (given by Bastian or Michi)
+1. Update `sites/default/aliases.drushrc.php` with the GIT Repo and the Sitename (given by Bastian or Michi) (if it is already the site_name you are already good)
 1. Install Drupal  
 `drush site-install config_installer` (this will take some minutes)
 1. Remove this file (README.md)  
