@@ -1,12 +1,12 @@
 // LINK STYLES
 // =============================================================================
-
 a:link,
 a:visited {
+  @include font-semibold;
   text-decoration: none;
-  color: $blue;
+  color: $black;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }

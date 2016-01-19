@@ -3,3 +3,47 @@
 
 $base-font-size:    16;
 $base-line-height:  28;
+
+// FONT INCLUDES
+// =============================================================================
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+// FONT MIXINS
+// =============================================================================
+
+@mixin font-regular {
+  font-family: "Gotham A", "Gotham B",'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+
+@mixin font-semibold {
+  font-family: "Gotham A", "Gotham B",'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin font-bold {
+  font-family: "Gotham A", "Gotham B",'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+}
+
+@mixin h1 {
+  @extend h1;
+  @include font-bold;
+}
+
+@mixin h2 {
+  @extend h2;
+}
+
+@mixin h3 {
+  @extend h3;
+}
+
+@mixin h4 {
+  @extend h4;
+}
+
