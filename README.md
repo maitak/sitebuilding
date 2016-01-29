@@ -107,12 +107,10 @@ Do this in the Vagrant!
 `git push origin dev`
 1. Wait for the deployment to happen (see [#missioncontrol](https://amazee.slack.com/messages/missioncontrol/) Slack channel)
 1. Run `drush updb` at the @dev server
-
-### Updating pre-installed contrib modules
-
-1. Get list of available updates  
-  `drush up -n`
-1. Check which modules should be updated (if a contrib module uses dev version, `drush up` may falsely report that update is required like `7.x-2.2+9-dev > 8.x-2.x-dev`, in this case, it's better to update the module manually)
-1. Run updates for certain modules  
-  `drush up <MODULE1> <MODULE2> <...> -y`
-1. Commit/push changes (run `drush updb` on Dev, if you did the above in Vagrant)
+1. Update contrib modules
+  1. Get list of available updates  
+    `drush up -n`
+  1. Check which modules should be updated (if a contrib module uses dev version, `drush up` may falsely report that update is required like `7.x-2.2+9-dev > 8.x-2.x-dev`, in this case, it's better to update the module manually)
+  1. Run updates for certain modules  
+    `drush up <MODULE1> <MODULE2> <...> -y`
+  1. Commit/push changes (run `drush updb` on Dev, if you did the above in Vagrant)
