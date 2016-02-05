@@ -7,3 +7,7 @@
  */
  // Disable Google Analytics from sending dev GA data.
 $config['google_analytics.settings']['account'] = 'UA-XXXXXXXX-YY';
+
+// Disable render caches
+$settings['cache']['bins']['render'] = 'cache.backend.null';
+$settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
