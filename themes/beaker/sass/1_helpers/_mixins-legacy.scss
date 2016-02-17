@@ -70,6 +70,7 @@ $default-transition-delay: null;
 $transform-support-threshold: $graceful-usage-threshold;
 $box-sizing-support-threshold: $critical-usage-threshold;
 $transition-support-threshold: $graceful-usage-threshold;
+$background-clip-support-threshold: $critical-usage-threshold;
 
 @function prefix-identifier($ident, $prefix: $current-prefix) {
   @return unquote(#{$prefix}#{if($prefix, "-", null)}#{$ident});

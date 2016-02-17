@@ -112,11 +112,6 @@
 // FADE IN MIXIN
 // =============================================================================
 
-@include keyframes(fadein) {
-  0%    { opacity: 0.0; }
-  100%  { opacity: 1.0; }
-}
-
 @mixin fadein($duration) {
     @include animation(fadein #{$duration} 1 ease-in-out);
 }
