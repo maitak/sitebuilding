@@ -1,15 +1,20 @@
-  // FUNCTIONS TO USE
-  // =============================================================================
+// FUNCTIONS TO USE
+// =============================================================================
 
-@function pxToEm($px, $ref: $sizeFontBase) {
+@function rem($px, $ref: $font-base-size) {
+  @return toRem(toPx($px) / toPx($ref));
+}
+@function em($px, $ref: $font-base-size) {
+  @return toEm(toPx($px) / toPx($ref));
+}
+
+@function pxToEm($px, $ref: $font-base-size) {
   @return toEm(toPx($px) / toPx($ref));
 }
 @function pxToRem($px) {
-  @return toRem(toPx($px) / toPx($sizeFontBase));
+  @return toRem(toPx($px) / toPx($font-base-size));
 }
-@function pxToPc($px, $ref: $sizeWidthContent) {
-  @return (toPx($px) / toPx($ref) * 100%);
-}
+
 @function toEm($val) {
   @return ($val + 0em);
 }
