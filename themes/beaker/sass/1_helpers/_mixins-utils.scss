@@ -33,7 +33,7 @@
 // PX TO REM MIXIN
 // =============================================================================
 
-@mixin font-size($sizeInPx: 16, $line: false) {
+@mixin font-size($sizeInPx: $base-font-size, $line: false) {
   font-size: rem($sizeInPx);
 
   @if( $line == true ) {
@@ -41,7 +41,7 @@
   }
 
   @if( $line != false ) {
-    line-height: ($line / 16) + rem;
+    line-height: ($line / $base-font-size) + rem;
   }
 }
 

@@ -4,18 +4,18 @@
  * =============================================================================
 */
 
-@function rem($px, $ref: $font-base-size) {
+@function rem($px, $ref: $base-font-size) {
   @return toRem(toPx($px) / toPx($ref));
 }
-@function em($px, $ref: $font-base-size) {
+@function em($px, $ref: $base-font-size) {
   @return toEm(toPx($px) / toPx($ref));
 }
 
-@function pxToEm($px, $ref: $font-base-size) {
+@function pxToEm($px, $ref: $base-font-size) {
   @return toEm(toPx($px) / toPx($ref));
 }
 @function pxToRem($px) {
-  @return toRem(toPx($px) / toPx($font-base-size));
+  @return toRem(toPx($px) / toPx($base-font-size));
 }
 
 @function toEm($val) {
