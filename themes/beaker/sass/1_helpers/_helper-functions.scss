@@ -1,5 +1,8 @@
-// FUNCTIONS TO USE
-// =============================================================================
+/* FUNCTIONS TO USE
+ * Usage I: e.g. font-size: rem(20px); //Generates rem value of normal px value
+ * works with all elements (like font-size, width, padding, margin etc.)
+ * =============================================================================
+*/
 
 @function rem($px, $ref: $font-base-size) {
   @return toRem(toPx($px) / toPx($ref));
