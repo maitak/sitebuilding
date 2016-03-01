@@ -24,9 +24,7 @@ h6 {
 
 h1 {
   @include h1;
-  // @include font-size(70,true);
-  font-size: rem(60px);
-  width: rem(1000px);
+  @include font-size(70,true);
 }
 
 h2 {
