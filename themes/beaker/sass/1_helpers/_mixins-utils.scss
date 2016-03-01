@@ -34,21 +34,13 @@
 // =============================================================================
 
 @mixin font-size($sizeInPx: 16, $line: false) {
-  @if unit($sizeInPx) == "px" {
-    $sizeInPx: $sizeInPx / 1px;
-  }
-  @else if unit($sizeInPx) == "em" {
-    @warn "Not a valid value: #{$value}";
-  }
-  font-size: ($sizeInPx) + px;
-  font-size: ($sizeInPx / 16) + rem;
+  font-size: rem($sizeInPx);
 
   @if( $line == true ) {
     $line: $sizeInPx * 1.66666667;
   }
 
   @if( $line != false ) {
-    line-height: ($line) + px;
     line-height: ($line / 16) + rem;
   }
 }
