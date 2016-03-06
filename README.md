@@ -88,7 +88,7 @@ After you made any configuration change run `drush config-export -y` and commit/
 Do this in the Vagrant!
 
 1. Checkout core branch  
-`git fetch && git checkout -b core origin/core 2> /dev/null || git checkout core && git pull`
+`chmod 755 sites/default && git fetch && git checkout -b core origin/core 2> /dev/null || git checkout core && git pull`
 1. Add Drupal Git Repository as remote  
 `git remote add drupal http://git.drupal.org/project/drupal.git`
 1. Fetch tags  
@@ -109,8 +109,8 @@ Do this in the Vagrant!
 1. Run `drush updb` at the @dev server
 1. Update contrib modules
   1. Get list of available updates  
-    `drush up -n`
+    `drush -n up`
   1. Check which modules should be updated (if a contrib module uses dev version, `drush up` may falsely report that update is required like `7.x-2.2+9-dev > 8.x-2.x-dev`, in this case, it's better to update the module manually)
   1. Run updates for certain modules  
-    `drush up <MODULE1> <MODULE2> <...> -y`
+    `drush -y up <MODULE1> <MODULE2> <...>`
   1. Commit/push changes (run `drush updb` on Dev, if you did the above in Vagrant)
