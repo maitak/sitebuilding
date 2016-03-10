@@ -191,6 +191,21 @@ gulp.task('images', function() {
 });
 
 
+/*SVG Minify*/
+gulp.task('svg', function() {
+  return gulp.src(path.img + '/**/*.svg')
+  .pipe(imagemin({
+      progressive: true,
+      interlaced: true,
+      multipass: true,
+      svgoPlugins: [{removeViewBox: false}]
+  }))
+  .pipe(imageminSvgo()())
+  .pipe(gulp.dest(path.img + '/'))
+  .pipe(duration('minified SVGs'));
+});
+
+
 /* Gulp browserSync init task*/
 gulp.task('watch', ['browser-sync'], function () {
     gulp.watch(path.sass + '/**/*.scss', ['sass']);
@@ -198,6 +213,7 @@ gulp.task('watch', ['browser-sync'], function () {
     gulp.watch("*.html").on('change', reload);
     gulp.watch(path.tpl + '/**/*.html.twig').on('change', reload);
     gulp.watch(path.tpl + '/**/*.tpl.php').on('change', reload);
+    gulp.watch(path.img + '/**/*.svg', ['svg']);
 });
 
 
@@ -212,6 +228,7 @@ gulp.task('help', function () {
   console.log('gulp watch'.yellow+'\t\trun with browserSync extension');
   console.log('gulp compile'.yellow+'\t\tcompile SASS for local/dev enviroment');
   console.log('gulp build'.yellow+'\t\tcompile SASS for live/staging enviroment');
+  console.log('gulp svg'.yellow+'\t\trun Optimizes SVGs in beaker (image folder only)');
   console.log('gulp images'.yellow+'\t\trun Optimizes Images in beaker');
   console.log('gulp jshint'.yellow+'\t\ttool that helps to detect errors & problems');
   console.log('gulp test'.yellow+'\t\trun Gulp test enviroment');
