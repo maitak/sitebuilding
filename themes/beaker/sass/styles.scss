@@ -16,9 +16,9 @@
 // output any styles themselves: Importing them multiple times to resolve
 // dependencies shouldn't be a problem.
 
-@import "0_settings/*";
-@import "1_helpers/*";
-@import "2_base/*";
-@import "3_pages/*";
-@import "4_components/*";
+@import "0_settings/**/*";
+@import "1_helpers/**/*";
+@import "2_base/**/*";
+@import "3_pages/**/*";
+@import "4_components/**/*";
 
