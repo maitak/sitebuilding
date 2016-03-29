@@ -12,7 +12,8 @@ deploy_tasks:
       npm run gulp -- build 2>&1
       rm -rf node_modules 2>&1
     after_deploy: |
-      drush -y updb 2>&1
+      drush -y updb --cache-clear=0 2>&1
+      drush -y cr 2>&1
 shared:
   production:
     - src: files
