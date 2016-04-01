@@ -1,6 +1,7 @@
 deploy_tasks:
   development:
     before_deploy:
+      - "exit 100"
       - "npm install"
       - "npm run gulp -- compile"
     after_deploy: |
