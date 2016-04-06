@@ -8,10 +8,13 @@ deploy_tasks:
       drush -y updb --cache-clear=0 2>&1
       drush -y cr 2>&1
   production:
-    before_deploy: 
-      - echo before_deploy
-    after_deploy:
-      - echo after_deploy
+    before_deploy: |
+      npm install 2>&1 
+      npm run gulp -- build 2>&1
+      rm -rf node_modules 2>&1
+    after_deploy: |
+      drush -y updb --cache-clear=0 2>&1
+      drush -y cr 2>&1
 shared:
   production:
     - src: files
