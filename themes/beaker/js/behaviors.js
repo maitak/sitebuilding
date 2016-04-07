@@ -19,11 +19,10 @@
   };
 
   // This is just a template
-  Drupal.behaviors.somecustomModule = {
-    attach: function(context, settings) {
+  // Drupal.behaviors.somecustomModule = {
+  //   attach: function(context, settings) {
 
-    }
-  };
-
+  //   }
+  // };
 
 })(jQuery);
