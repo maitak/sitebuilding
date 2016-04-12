@@ -16,7 +16,8 @@ var path = {
     css:    'css',
     js:     'js',
     img:    'images',
-    tpl:    'templates'
+    tpl:    'templates',
+    fonts:  'fonts'
 };
 
 var gulp          = require('gulp'),
@@ -46,6 +47,7 @@ path.css    = path.theme + path.css;
 path.js     = path.theme + path.js;
 path.img    = path.theme + path.img;
 path.tpl    = path.theme + path.tpl;
+path.fonts  = path.theme + path.fonts;
 
 
 if( fs.existsSync('./domain.json') ) {
@@ -206,6 +208,25 @@ gulp.task('svg', function() {
 });
 
 
+/* Gulp generate iconfont from SVGs*/
+gulp.task('iconfont', function(){
+  return gulp.src([path.img + '/iconfont/*.svg'])
+    .pipe(iconfont({
+      fontName: 'iconfont',
+      prependUnicode: true,
+      formats: ['ttf', 'eot', 'woff', 'svg', 'woff2'],
+      timestamp: runTimestamp,
+      normalize: true,
+      fixedWith: 25,
+      fontHeight: 1000
+    }))
+      .on('glyphs', function(glyphs, options) {
+        console.log(glyphs, options);
+      })
+    .pipe(gulp.dest(path.fonts + '/'));
+});
+
+
 /* Gulp browserSync init task*/
 gulp.task('watch', ['browser-sync'], function () {
     gulp.watch(path.sass + '/**/*.scss', ['sass']);
@@ -231,6 +252,7 @@ gulp.task('help', function () {
   console.log('gulp svg'.yellow+'\t\trun Optimizes SVGs in beaker (image folder only)');
   console.log('gulp images'.yellow+'\t\trun Optimizes Images in beaker');
   console.log('gulp jshint'.yellow+'\t\ttool that helps to detect errors & problems');
+  console.log('gulp iconfont'.yellow+'\t\tGenerate Iconfont from images/iconfont folder (SVG only)');
   console.log('gulp test'.yellow+'\t\trun Gulp test enviroment');
   console.log("\nOptions for watch task:".underline);
   console.log("\n  --ghostmode\t\tsyncs clicks,scroll,forms across browsers");
