@@ -27,7 +27,7 @@
 	url = http://git.drupal.org/project/metatag.git
 [submodule "modules/contrib/redirect"]
 	path = modules/contrib/redirect
-	url = https://github.com/AmazeeLabs/redirect.git
+	url = https://git.drupal.org/project/redirect.git
 [submodule "modules/contrib/git_deploy"]
 	path = modules/contrib/git_deploy
 	url = http://git.drupal.org/project/git_deploy.git
