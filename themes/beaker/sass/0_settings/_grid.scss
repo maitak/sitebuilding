@@ -14,8 +14,8 @@ $susy: (
   debug: (
     image: show-columns,
     color: rgba($red,0.1),
-    // output: overlay,
-    // toggle: bottom right,
+    output: overlay,
+    toggle: bottom right,
   ),
 );
 
@@ -25,7 +25,7 @@ $susy: (
 .grid {
   padding: 0 15px;
   @include breakpoint($tablet-up) {
-    @include container;
+    @include container($susy);
     padding: 0 40px;
   }
 
