@@ -39,7 +39,7 @@ var gulp          = require('gulp'),
     imagemin      = require('gulp-imagemin'),
     pngquant      = require('imagemin-pngquant'),
     imageminSvgo  = require('imagemin-svgo');
-
+    require('shelljs/global'); //Shell access
 
 /* Set paths */
 path.sass   = path.theme + path.sass;
@@ -50,9 +50,16 @@ path.tpl    = path.theme + path.tpl;
 path.fonts  = path.theme + path.fonts;
 
 
-if( fs.existsSync('./domain.json') ) {
+/*Docker setup*/
+if( fs.existsSync('./docker-compose.yml') ) {
+    var domain        = exec('docker-compose exec drupal hostname', {silent:true}).stdout;
+}
+/*Vagrant locally*/
+else if( fs.existsSync('./domain.json') ) {
     var domain        = require('./domain.json');
-} else {
+}
+/*Inside vagrant*/
+else {
     var domain        = process.env.AMAZEEIO_SITE_URL;
 }
 

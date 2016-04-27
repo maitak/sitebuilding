@@ -26,6 +26,7 @@
     "jshint": "^2.8.0",
     "jshint-stylish": ">=2.0.1",
     "pngquant-bin": "^3.0.0",
+    "shelljs": "^0.7.0",
     "stream-browserify": "^2.0.1"
   },
   "optionalDependencies": {
