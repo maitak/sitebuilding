@@ -43,3 +43,6 @@
 [submodule "profiles/config_installer"]
 	path = profiles/config_installer
 	url = git://git.drupal.org/project/config_installer.git
+[submodule "modules/contrib/varnish"]
+	path = modules/contrib/varnish
+	url = git@github.com:AmazeeLabs/varnish.git
