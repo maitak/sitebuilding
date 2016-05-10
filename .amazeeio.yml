@@ -1,6 +1,7 @@
 deploy_tasks:
   development:
     before_deploy:
+      - composer install
       - npm install
       - npm run gulp -- compile
     after_deploy:
@@ -8,6 +9,7 @@ deploy_tasks:
       - drush -y cr
   production:
     before_deploy:
+      - composer install
       - npm install
       - npm run gulp -- build
       - rm -rf node_modules
