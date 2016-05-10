@@ -149,6 +149,10 @@ class LanguageListTest extends WebTestBase {
       'direction' => Language::DIRECTION_LTR,
     );
     $this->drupalPostForm('admin/config/regional/language/add', $edit, t('Add custom language'));
+    // As we changed the amount of languages, rebuilt the container so that
+    // \Drupal\language\LanguageServiceProvider (un)register its services and we
+    // can construct the correct URL.
+    $this->rebuildContainer();
     $this->assertUrl(\Drupal::url('entity.configurable_language.collection', [], ['absolute' => TRUE]));
     $this->assertText($name, 'Name found.');
 

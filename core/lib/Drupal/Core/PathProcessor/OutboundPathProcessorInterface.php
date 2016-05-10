@@ -14,7 +14,7 @@ interface OutboundPathProcessorInterface {
    * Processes the outbound path.
    *
    * @param string $path
-   *   The path to process, with a leading slash.
+   *   The URL-encoded path to process, with a leading slash.
    * @param array $options
    *   (optional) An associative array of additional options, with the following
    *   elements:
@@ -43,7 +43,7 @@ interface OutboundPathProcessorInterface {
    *   (optional) Object to collect path processors' bubbleable metadata.
    *
    * @return string
-   *   The processed path.
+   *   The processed URL-encoded path.
    */
   public function processOutbound($path, &$options = array(), Request $request = NULL, BubbleableMetadata $bubbleable_metadata = NULL);
 

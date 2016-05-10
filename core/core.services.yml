@@ -33,6 +33,7 @@ parameters:
     - sftp
     - webcal
     - rtsp
+  route_normalizer_enabled: true
 services:
   # Simple cache contexts, directly derived from the request context.
   cache_context.ip:
@@ -794,6 +795,11 @@ services:
   route_filter_subscriber:
     class: Drupal\Core\EventSubscriber\RouteFilterSubscriber
     arguments: ['@route_filter.lazy_collector']
+    tags:
+      - { name: event_subscriber }
+  route_normalizer_request_subscriber:
+    class: Drupal\Core\EventSubscriber\RouteNormalizerRequestSubscriber
+    arguments: ['@url_generator', '@path.matcher', '%route_normalizer_enabled%']
     tags:
       - { name: event_subscriber }
   url_generator.non_bubbling:

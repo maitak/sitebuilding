@@ -432,6 +432,10 @@ class BookTest extends WebTestBase {
 
     // Test correct display of the block.
     $nodes = $this->createBook();
+    // It may happen that user is redirected to the front page during the
+    // logout, so the front page may be already cached and we did no action to
+    // clear the cache so far. Do it now.
+    Cache::invalidateTags(['rendered']);
     $this->drupalGet('<front>');
     $this->assertText($block->label(), 'Book navigation block is displayed.');
     $this->assertText($this->book->label(), format_string('Link to book root (@title) is displayed.', array('@title' => $nodes[0]->label())));

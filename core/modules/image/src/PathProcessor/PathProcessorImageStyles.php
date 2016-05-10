@@ -65,6 +65,9 @@ class PathProcessorImageStyles implements InboundPathProcessorInterface {
       // Set the file as query parameter.
       $request->query->set('file', $file);
 
+      // Disable route normalizer since we changed the request object.
+      $request->attributes->set('_disable_route_normalizer', TRUE);
+
       return $path_prefix . $image_style . '/' . $scheme;
     }
     else {

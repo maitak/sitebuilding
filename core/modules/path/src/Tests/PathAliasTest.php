@@ -33,6 +33,12 @@ class PathAliasTest extends PathTestBase {
    * Tests the path cache.
    */
   function testPathCache() {
+
+    // Disable the route normalizer, because otherwise internal paths are
+    // redirected to their aliases and no "preload-paths:" cache is set.
+    $this->setContainerParameter('route_normalizer_enabled', FALSE);
+    $this->rebuildContainer();
+
     // Create test node.
     $node1 = $this->drupalCreateNode();
 

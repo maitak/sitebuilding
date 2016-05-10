@@ -55,6 +55,7 @@ class SimpleTestBrowserTest extends WebTestBase {
     $this->assertEqual(0, $this->container->get('current_user')->id(), 'Current user service updated.');
 
     // Test the maximum redirection option.
+    $maximum_redirects_original = $this->maximumRedirects;
     $this->maximumRedirects = 1;
     $edit = array(
       'name' => $user->getUsername(),
@@ -65,6 +66,7 @@ class SimpleTestBrowserTest extends WebTestBase {
     ));
     $headers = $this->drupalGetHeaders(TRUE);
     $this->assertEqual(count($headers), 2, 'Simpletest stopped following redirects after the first one.');
+    $this->maximumRedirects = $maximum_redirects_original;
 
     // Remove the Simpletest private key file so we can test the protection
     // against requests that forge a valid testing user agent to gain access

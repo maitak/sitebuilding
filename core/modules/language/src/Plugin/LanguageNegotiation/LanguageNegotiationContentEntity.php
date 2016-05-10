@@ -118,10 +118,12 @@ class LanguageNegotiationContentEntity extends LanguageNegotiationMethodBase imp
         unset($options['language']);
       }
 
-      if (isset($options['query']) && is_string($options['query'])) {
-        $query = [];
-        parse_str($options['query'], $query);
-        $options['query'] = $query;
+      if (isset($options['query'])) {
+        if (is_string($options['query'])) {
+          $query = [];
+          parse_str($options['query'], $query);
+          $options['query'] = $query;
+        }
       }
       else {
         $options['query'] = [];

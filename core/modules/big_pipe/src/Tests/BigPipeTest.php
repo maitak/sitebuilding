@@ -100,11 +100,11 @@ class BigPipeTest extends WebTestBase {
     $this->cookies = [];
 
     // 3. Session (anonymous).
-    $this->drupalGet(Url::fromRoute('user.login', [], ['query' => ['trigger_session' => 1]]));
-    $this->drupalGet(Url::fromRoute('user.login'));
+    $this->drupalGet(Url::fromRoute('user.register', [], ['query' => ['trigger_session' => 1]]));
+    $this->drupalGet(Url::fromRoute('user.register'));
     $this->assertSessionCookieExists(TRUE);
     $this->assertBigPipeNoJsCookieExists(FALSE);
-    $this->assertRaw('<noscript><meta http-equiv="Refresh" content="0; URL=' . base_path() . 'big_pipe/no-js?destination=' . base_path() . 'user/login" />' . "\n" . '</noscript>');
+    $this->assertRaw('<noscript><meta http-equiv="Refresh" content="0; URL=' . base_path() . 'big_pipe/no-js?destination=' . base_path() . 'user/register" />' . "\n" . '</noscript>');
     $this->assertNoRaw($no_js_to_js_markup);
     $this->assertBigPipeNoJsMetaRefreshRedirect();
     $this->assertBigPipeNoJsCookieExists(TRUE);

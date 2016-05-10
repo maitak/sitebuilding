@@ -153,3 +153,6 @@ parameters:
     - sftp
     - webcal
     - rtsp
+  # Enables the route normalizer.
+  # @default true
+  route_normalizer_enabled: true

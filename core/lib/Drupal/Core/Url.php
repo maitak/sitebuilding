@@ -754,7 +754,7 @@ class Url {
    * This path will not include any prefixes, fragments, or query strings.
    *
    * @return string
-   *   The internal path for this route.
+   *   The internal URL-encoded path for this route.
    *
    * @throws \UnexpectedValueException.
    *   If this is a URI with no corresponding system path.
