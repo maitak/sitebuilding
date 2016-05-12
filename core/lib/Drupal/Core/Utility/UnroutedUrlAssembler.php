@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\Core\Utility\UnroutedUrlAssembler.
- */
-
 namespace Drupal\Core\Utility;
 
 use Drupal\Component\Utility\UrlHelper;
@@ -114,6 +109,9 @@ class UnroutedUrlAssembler implements UnroutedUrlAssemblerInterface {
     //   https://www.drupal.org/node/2417459
     $uri = substr($uri, 5);
 
+    // The path should be URl-encoded before possible path processing.
+    $uri = UrlHelper::encodePath($uri);
+
     // Allow (outbound) path processing, if needed. A valid use case is the path
     // alias overview form:
     // @see \Drupal\path\Controller\PathController::adminOverview().
@@ -155,7 +153,7 @@ class UnroutedUrlAssembler implements UnroutedUrlAssemblerInterface {
 
     $prefix = empty($uri) ? rtrim($options['prefix'], '/') : $options['prefix'];
 
-    $uri = str_replace('%2F', '/', rawurlencode($prefix . $uri));
+    $uri = UrlHelper::encodePath($prefix) . $uri;
     $query = $options['query'] ? ('?' . UrlHelper::buildQuery($options['query'])) : '';
     $url = $base . $options['script'] . $uri . $query . $options['fragment'];
     return $collect_bubbleable_metadata ? $generated_url->setGeneratedUrl($url) : $url;

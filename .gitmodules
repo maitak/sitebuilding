@@ -9,7 +9,7 @@
 	url = http://git.drupal.org/project/token.git
 [submodule "modules/contrib/pathauto"]
 	path = modules/contrib/pathauto
-	url = http://git.drupal.org/project/pathauto.git
+	url = https://git.drupal.org/project/pathauto.git
 [submodule "modules/contrib/ctools"]
 	path = modules/contrib/ctools
 	url = http://git.drupal.org/project/ctools.git
@@ -27,10 +27,22 @@
 	url = http://git.drupal.org/project/metatag.git
 [submodule "modules/contrib/redirect"]
 	path = modules/contrib/redirect
-	url = git@github.com:md-systems/redirect.git
+	url = https://git.drupal.org/project/redirect.git
 [submodule "modules/contrib/git_deploy"]
 	path = modules/contrib/git_deploy
 	url = http://git.drupal.org/project/git_deploy.git
 [submodule "modules/contrib/link_css"]
 	path = modules/contrib/link_css
 	url = http://git.drupal.org/project/link_css.git	
+[submodule "modules/contrib/paragraphs"]
+	path = modules/contrib/paragraphs
+	url = git://git.drupal.org/project/paragraphs.git
+[submodule "modules/contrib/entity_reference_revisions"]
+	path = modules/contrib/entity_reference_revisions
+	url = git://git.drupal.org/project/entity_reference_revisions.git
+[submodule "profiles/config_installer"]
+	path = profiles/config_installer
+	url = git://git.drupal.org/project/config_installer.git
+[submodule "modules/contrib/varnish"]
+	path = modules/contrib/varnish
+	url = git@github.com:AmazeeLabs/varnish.git

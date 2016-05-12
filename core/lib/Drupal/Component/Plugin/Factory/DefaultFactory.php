@@ -1,8 +1,4 @@
 <?php
-/**
- * @file
- * Contains \Drupal\Component\Plugin\Factory\DefaultFactory.
- */
 
 namespace Drupal\Component\Plugin\Factory;
 
@@ -51,7 +47,7 @@ class DefaultFactory implements FactoryInterface {
   }
 
   /**
-   * Implements Drupal\Component\Plugin\Factory\FactoryInterface::createInstance().
+   * {@inheritdoc}
    */
   public function createInstance($plugin_id, array $configuration = array()) {
     $plugin_definition = $this->discovery->getDefinition($plugin_id);

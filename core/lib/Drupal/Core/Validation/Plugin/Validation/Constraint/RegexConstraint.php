@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\Core\Validation\Plugin\Validation\Constraint\RegexConstraint.
- */
-
 namespace Drupal\Core\Validation\Plugin\Validation\Constraint;
 
 use Symfony\Component\Validator\Constraints\Regex;
@@ -24,7 +19,7 @@ class RegexConstraint extends Regex {
   public $message = 'This value is not valid.';
 
   /**
-   * Overrides Range::validatedBy().
+   * {@inheritdoc}
    */
   public function validatedBy() {
     return '\Symfony\Component\Validator\Constraints\RegexValidator';

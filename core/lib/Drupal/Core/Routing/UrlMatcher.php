@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\Core\Routing\UrlMatcher.
- */
-
 namespace Drupal\Core\Routing;
 
 use Drupal\Core\Path\CurrentPathStack;
@@ -43,7 +38,12 @@ class UrlMatcher extends BaseUrlMatcher {
     $context->fromRequest($request);
     $this->setContext($context);
 
-    return $this->match($this->currentPath->getPath($request));
+    // The matcher expects raw path while we have it already decoded by the
+    // \Drupal\Core\PathProcessor\PathProcessorDecode. Encode it to avoid double
+    // decoding of the route parameters.
+    $encoded_path = rawurlencode($this->currentPath->getPath($request));
+
+    return $this->match($encoded_path);
   }
 
 }

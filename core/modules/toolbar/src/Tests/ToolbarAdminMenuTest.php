@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\toolbar\Tests\ToolbarAdminMenuTest.
- */
-
 namespace Drupal\toolbar\Tests;
 
 use Drupal\Core\Language\LanguageInterface;
@@ -215,7 +210,6 @@ class ToolbarAdminMenuTest extends WebTestBase {
    */
   function testNonCurrentUserAccountUpdates() {
     $admin_user_id = $this->adminUser->id();
-    $admin_user_2_id = $this->adminUser2->id();
     $this->hash = $this->getSubtreesHash();
 
     // adminUser2 will add a role to adminUser.
@@ -258,12 +252,8 @@ class ToolbarAdminMenuTest extends WebTestBase {
     $langcode = 'xx';
     // The English name for the language. This will be translated.
     $name = $this->randomMachineName(16);
-    // This is the language indicator on the translation search screen for
-    // untranslated strings.
-    $language_indicator = "<em class=\"locale-untranslated\">$langcode</em> ";
     // This will be the translation of $name.
     $translation = $this->randomMachineName(16);
-    $translation_to_en = $this->randomMachineName(16);
 
     // Add custom language.
     $this->drupalLogin($admin_user);

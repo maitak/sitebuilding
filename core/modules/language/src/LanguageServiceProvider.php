@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\language\LanguageServiceProvider.
- */
-
 namespace Drupal\language;
 
 use Drupal\Core\Config\BootstrapConfigStorageFactory;
@@ -31,10 +26,7 @@ class LanguageServiceProvider extends ServiceProviderBase {
         ->addArgument(new Reference('language_manager'))
         ->addArgument(new Reference('language_negotiator'))
         ->addArgument(new Reference('string_translation'))
-        ->addArgument(new Reference('current_user'))
-        ->addArgument(new Reference('url_generator'))
-        ->addArgument(new Reference('path.matcher'))
-        ->addArgument(new Reference('current_route_match'));
+        ->addArgument(new Reference('current_user'));
 
       $container->register('path_processor_language', 'Drupal\language\HttpKernel\PathProcessorLanguage')
         ->addTag('path_processor_inbound', array('priority' => 300))
@@ -42,7 +34,9 @@ class LanguageServiceProvider extends ServiceProviderBase {
         ->addArgument(new Reference('config.factory'))
         ->addArgument(new Reference('language_manager'))
         ->addArgument(new Reference('language_negotiator'))
-        ->addArgument(new Reference('current_user'));
+        ->addArgument(new Reference('current_user'))
+        ->addArgument(new Reference('language.config_subscriber'))
+        ->addMethodCall('initConfigSubscriber');
     }
   }
 

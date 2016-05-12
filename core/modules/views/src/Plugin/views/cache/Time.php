@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\views\Plugin\views\cache\Time.
- */
-
 namespace Drupal\views\Plugin\views\cache;
 
 use Drupal\Core\Datetime\DateFormatterInterface;
@@ -27,7 +22,7 @@ use Symfony\Component\HttpFoundation\Request;
 class Time extends CachePluginBase {
 
   /**
-   * Overrides Drupal\views\Plugin\Plugin::$usesOptions.
+   * {@inheritdoc}
    */
   protected $usesOptions = TRUE;
 

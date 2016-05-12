@@ -6,8 +6,6 @@
  * This file should contain all settings.php configurations that are needed by all environments.
  */
 
-#$settings['hash_salt'] = 'CHANGEME';
-
-$settings['install_profile'] = 'standard';
+$settings['hash_salt'] = 'CHANGEME';
 
 $config_directories['sync'] = 'sites/default/config/sync';

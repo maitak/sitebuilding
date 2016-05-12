@@ -184,6 +184,13 @@ class FilterUnitTest extends KernelTestBase {
     $this->assertIdentical($expected, $output->getProcessedText());
     $this->assertIdentical($attached_library, $output->getAttachments());
 
+    // Ensure the caption filter works for linked images.
+    $input = '<a href="http://example.com/llamas/are/awesome/but/kittens/are/cool/too"><img src="llama.jpg" data-caption="Loquacious llama!" /></a>';
+    $expected = '<figure role="group"><a href="http://example.com/llamas/are/awesome/but/kittens/are/cool/too"><img src="llama.jpg" /></a>' . "\n" . '<figcaption>Loquacious llama!</figcaption></figure>';
+    $output = $test($input);
+    $this->assertIdentical($expected, $output->getProcessedText());
+    $this->assertIdentical($attached_library, $output->getAttachments());
+
     // So far we've tested that the caption filter works correctly. But we also
     // want to make sure that it works well in tandem with the "Limit allowed
     // HTML tags" filter, which it is typically used with.
@@ -298,6 +305,13 @@ class FilterUnitTest extends KernelTestBase {
     // attribute value.
     $input = '<img src="llama.jpg" data-caption="Loquacious llama!" data-align="left foobar" />';
     $expected = '<figure role="group"><img src="llama.jpg" /><figcaption>Loquacious llama!</figcaption></figure>';
+    $output = $test($input);
+    $this->assertIdentical($expected, $output->getProcessedText());
+    $this->assertIdentical($attached_library, $output->getAttachments());
+
+    // Ensure both filters together work for linked images.
+    $input = '<a href="http://example.com/llamas/are/awesome/but/kittens/are/cool/too"><img src="llama.jpg" data-caption="Loquacious llama!" data-align="center" /></a>';
+    $expected = '<figure role="group" class="align-center"><a href="http://example.com/llamas/are/awesome/but/kittens/are/cool/too"><img src="llama.jpg" /></a>' . "\n" . '<figcaption>Loquacious llama!</figcaption></figure>';
     $output = $test($input);
     $this->assertIdentical($expected, $output->getProcessedText());
     $this->assertIdentical($attached_library, $output->getAttachments());
@@ -848,7 +862,7 @@ www.example.com with a newline in comments -->
    *
    * @param FilterInterface $filter
    *   A input filter object.
-   * @param $tests
+   * @param array $tests
    *   An associative array, whereas each key is an arbitrary input string and
    *   each value is again an associative array whose keys are filter output
    *   strings and whose values are Booleans indicating whether the output is
@@ -1127,15 +1141,16 @@ body {color:red}
    * Note that this does not remove nulls, new lines and other characters that
    * could be used to obscure a tag or an attribute name.
    *
-   * @param $haystack
+   * @param string $haystack
    *   Text to look in.
-   * @param $needle
+   * @param string $needle
    *   Lowercase, plain text to look for.
-   * @param $message
+   * @param string $message
    *   (optional) Message to display if failed. Defaults to an empty string.
-   * @param $group
+   * @param string $group
    *   (optional) The group this message belongs to. Defaults to 'Other'.
-   * @return
+   *
+   * @return bool
    *   TRUE on pass, FALSE on fail.
    */
   function assertNormalized($haystack, $needle, $message = '', $group = 'Other') {
@@ -1151,15 +1166,16 @@ body {color:red}
    * Note that this does not remove nulls, new lines, and other character that
    * could be used to obscure a tag or an attribute name.
    *
-   * @param $haystack
+   * @param string $haystack
    *   Text to look in.
-   * @param $needle
+   * @param string $needle
    *   Lowercase, plain text to look for.
-   * @param $message
+   * @param string $message
    *   (optional) Message to display if failed. Defaults to an empty string.
-   * @param $group
+   * @param string $group
    *   (optional) The group this message belongs to. Defaults to 'Other'.
-   * @return
+   *
+   * @return bool
    *   TRUE on pass, FALSE on fail.
    */
   function assertNoNormalized($haystack, $needle, $message = '', $group = 'Other') {

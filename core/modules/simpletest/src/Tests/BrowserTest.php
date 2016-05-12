@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\simpletest\Tests\BrowserTest.
- */
-
 namespace Drupal\simpletest\Tests;
 
 use Drupal\simpletest\WebTestBase;
@@ -43,6 +38,10 @@ class BrowserTest extends WebTestBase {
    * Test \Drupal\simpletest\WebTestBase::getAbsoluteUrl().
    */
   function testGetAbsoluteUrl() {
+
+    // Change the frontpage to something else than the default "/user/login".
+    $this->config('system.site')->set('page.front', '/user/password')->save();
+
     $url = 'user/login';
 
     $this->drupalGet($url);

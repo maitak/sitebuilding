@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\Core\Routing\UrlGeneratorInterface.
- */
-
 namespace Drupal\Core\Routing;
 
 use Symfony\Cmf\Component\Routing\VersatileGeneratorInterface;
@@ -20,13 +15,13 @@ interface UrlGeneratorInterface extends VersatileGeneratorInterface {
    * Gets the internal path (system path) for a route.
    *
    * @param string|\Symfony\Component\Routing\Route $name
-   *  The route name or a route object.
+   *   The route name or a route object.
    * @param array $parameters
-   *  An array of parameters as passed to
-   *  \Symfony\Component\Routing\Generator\UrlGeneratorInterface::generate().
+   *   An array of parameters as passed to
+   *   \Symfony\Component\Routing\Generator\UrlGeneratorInterface::generate().
    *
    * @return string
-   *  The internal Drupal path corresponding to the route.
+   *  The internal Drupal URL-encoded path corresponding to the route.
    */
   public function getPathFromRoute($name, $parameters = array());
 
@@ -77,6 +72,10 @@ interface UrlGeneratorInterface extends VersatileGeneratorInterface {
    * @throws \Symfony\Component\Routing\Exception\InvalidParameterException
    *   Thrown when a parameter value for a placeholder is not correct because it
    *   does not match the requirement.
+   *
+   * @internal
+   *   Should not be used in user code.
+   *   Use \Drupal\Core\Url instead.
    */
   public function generateFromRoute($name, $parameters = array(), $options = array(), $collect_bubbleable_metadata = FALSE);
 

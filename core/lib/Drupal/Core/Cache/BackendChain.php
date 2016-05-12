@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\Core\Cache\BackendChain.
- */
-
 namespace Drupal\Core\Cache;
 /**
  * Defines a chained cache implementation for combining multiple cache backends.
@@ -74,7 +69,7 @@ class BackendChain implements CacheBackendInterface, CacheTagsInvalidatorInterfa
   }
 
   /**
-   * Implements Drupal\Core\Cache\CacheBackendInterface::get().
+   * {@inheritdoc}
    */
   public function get($cid, $allow_invalid = FALSE) {
     foreach ($this->backends as $index => $backend) {
@@ -94,7 +89,7 @@ class BackendChain implements CacheBackendInterface, CacheTagsInvalidatorInterfa
   }
 
   /**
-   * Implements Drupal\Core\Cache\CacheBackendInterface::getMultiple().
+   * {@inheritdoc}
    */
   public function getMultiple(&$cids, $allow_invalid = FALSE) {
     $return = array();
@@ -125,7 +120,7 @@ class BackendChain implements CacheBackendInterface, CacheTagsInvalidatorInterfa
   }
 
   /**
-   * Implements Drupal\Core\Cache\CacheBackendInterface::set().
+   * {@inheritdoc}
    */
   public function set($cid, $data, $expire = Cache::PERMANENT, array $tags = array()) {
     foreach ($this->backends as $backend) {
@@ -143,7 +138,7 @@ class BackendChain implements CacheBackendInterface, CacheTagsInvalidatorInterfa
   }
 
   /**
-   * Implements Drupal\Core\Cache\CacheBackendInterface::delete().
+   * {@inheritdoc}
    */
   public function delete($cid) {
     foreach ($this->backends as $backend) {
@@ -152,7 +147,7 @@ class BackendChain implements CacheBackendInterface, CacheTagsInvalidatorInterfa
   }
 
   /**
-   * Implements Drupal\Core\Cache\CacheBackendInterface::deleteMultiple().
+   * {@inheritdoc}
    */
   public function deleteMultiple(array $cids) {
     foreach ($this->backends as $backend) {
@@ -161,7 +156,7 @@ class BackendChain implements CacheBackendInterface, CacheTagsInvalidatorInterfa
   }
 
   /**
-   * Implements Drupal\Core\Cache\CacheBackendInterface::deleteAll().
+   * {@inheritdoc}
    */
   public function deleteAll() {
     foreach ($this->backends as $backend) {
@@ -170,7 +165,7 @@ class BackendChain implements CacheBackendInterface, CacheTagsInvalidatorInterfa
   }
 
   /**
-   * Implements Drupal\Core\Cache\CacheBackendInterface::invalidate().
+   * {@inheritdoc}
    */
   public function invalidate($cid) {
     foreach ($this->backends as $backend) {
@@ -179,7 +174,7 @@ class BackendChain implements CacheBackendInterface, CacheTagsInvalidatorInterfa
   }
 
   /**
-   * Implements Drupal\Core\Cache\CacheBackendInterface::invalidateMultiple().
+   * {@inheritdoc}
    */
   public function invalidateMultiple(array $cids) {
     foreach ($this->backends as $backend) {
@@ -188,7 +183,7 @@ class BackendChain implements CacheBackendInterface, CacheTagsInvalidatorInterfa
   }
 
   /**
-   * Implements Drupal\Core\Cache\CacheBackendInterface::invalidateTags().
+   * {@inheritdoc}
    */
   public function invalidateTags(array $tags) {
     foreach ($this->backends as $backend) {
@@ -199,7 +194,7 @@ class BackendChain implements CacheBackendInterface, CacheTagsInvalidatorInterfa
   }
 
   /**
-   * Implements Drupal\Core\Cache\CacheBackendInterface::invalidateAll().
+   * {@inheritdoc}
    */
   public function invalidateAll() {
     foreach ($this->backends as $backend) {
@@ -208,7 +203,7 @@ class BackendChain implements CacheBackendInterface, CacheTagsInvalidatorInterfa
   }
 
   /**
-   * Implements Drupal\Core\Cache\CacheBackendInterface::garbageCollection().
+   * {@inheritdoc}
    */
   public function garbageCollection() {
     foreach ($this->backends as $backend) {

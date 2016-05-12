@@ -31,7 +31,7 @@ if (getenv('AMAZEEIO_VARNISH_HOSTS') && getenv('AMAZEEIO_VARNISH_SECRET')) {
   array_walk($varnish_hosts, function(&$value, $key) { $value .= ':6082'; });
 
   $settings['reverse_proxy'] = TRUE;
-  $settings['reverse_proxy_addresses'] = explode(getenv('AMAZEEIO_VARNISH_HOSTS'), ',');
+  $settings['reverse_proxy_addresses'] = array_merge(explode(',', getenv('AMAZEEIO_VARNISH_HOSTS')), array('127.0.0.1'));
   $settings['varnish_control_terminal'] = implode($varnish_hosts, " ");
   $settings['varnish_control_key'] = getenv('AMAZEEIO_VARNISH_SECRET');
   $settings['varnish_version'] = 3;
@@ -92,3 +92,7 @@ if (file_exists(__DIR__ . '/settings.local.php')) {
 if (file_exists(__DIR__ . '/services.local.yml')) {
   $settings['container_yamls'][] = __DIR__ . '/services.local.yml';
 }
+
+// Keep "install_profile" here so it's not added by "drush site-install" again
+// and again.
+$settings['install_profile'] = 'config_installer';

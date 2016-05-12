@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\Core\Path\AliasManager.
- */
-
 namespace Drupal\Core\Path;
 
 use Drupal\Core\Cache\CacheBackendInterface;
@@ -254,7 +249,7 @@ class AliasManager implements AliasManagerInterface, CacheDecoratorInterface {
   }
 
   /**
-   * Implements \Drupal\Core\Path\AliasManagerInterface::cacheClear().
+   * {@inheritdoc}
    */
   public function cacheClear($source = NULL) {
     if ($source) {

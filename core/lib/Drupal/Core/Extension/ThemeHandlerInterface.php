@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\Core\Extension\ThemeHandlerInterface.
- */
-
 namespace Drupal\Core\Extension;
 
 /**
@@ -207,5 +202,19 @@ interface ThemeHandlerInterface {
    *   Thrown when the requested theme does not exist.
    */
   public function getTheme($name);
+
+  /**
+   * Determines if a theme should be shown in the user interface.
+   *
+   * To be shown in the UI the theme has to be installed. If the theme is hidden
+   * it will not be shown unless it is the default or admin theme.
+   *
+   * @param string $name
+   *   The name of the theme to check.
+   *
+   * @return bool
+   *   TRUE if the theme should be shown in the UI, FALSE if not.
+   */
+  public function hasUi($name);
 
 }

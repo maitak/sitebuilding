@@ -210,7 +210,6 @@ function drupal_get_database_types() {
  *   @endcode
  *   gets dumped as:
  *   @code
- *   $config_directories['active'] = 'config_hash/active';
  *   $config_directories['sync'] = 'config_hash/sync'
  *   @endcode
  */
@@ -516,7 +515,7 @@ function drupal_install_config_directories() {
   // they can later be added to git. Since this directory is auto-created, we
   // have to write out the README rather than just adding it to the drupal core
   // repo.
-  $text =  'This directory contains configuration to be imported into your Drupal site. To make this configuration active, visit admin/config/development/configuration/sync.'  .' For information about deploying configuration between servers, see https://www.drupal.org/documentation/administer/config';
+  $text = 'This directory contains configuration to be imported into your Drupal site. To make this configuration active, visit admin/config/development/configuration/sync.'  .' For information about deploying configuration between servers, see https://www.drupal.org/documentation/administer/config';
   file_put_contents(config_get_config_directory(CONFIG_SYNC_DIRECTORY) . '/README.txt', $text);
 }
 
@@ -524,8 +523,7 @@ function drupal_install_config_directories() {
  * Ensures that the config directory exists and is writable, or can be made so.
  *
  * @param string $type
- *   Type of config directory to return. Drupal core provides 'active' and
- *   'sync'.
+ *   Type of config directory to return. Drupal core provides 'sync'.
  *
  * @return bool
  *   TRUE if the config directory exists and is writable.
@@ -717,11 +715,11 @@ function drupal_verify_install_file($file, $mask = NULL, $type = 'file') {
  * Creates a directory with the specified permissions.
  *
  * @param $file
- *  The name of the directory to create;
+ *   The name of the directory to create;
  * @param $mask
- *  The permissions of the directory to create.
+ *   The permissions of the directory to create.
  * @param $message
- *  (optional) Whether to output messages. Defaults to TRUE.
+ *   (optional) Whether to output messages. Defaults to TRUE.
  *
  * @return
  *  TRUE/FALSE whether or not the directory was successfully created.
@@ -766,11 +764,11 @@ function drupal_install_mkdir($file, $mask, $message = TRUE) {
  * 0700 and get the correct value of 0500.
  *
  * @param $file
- *  The name of the file with permissions to fix.
+ *   The name of the file with permissions to fix.
  * @param $mask
- *  The desired permissions for the file.
+ *   The desired permissions for the file.
  * @param $message
- *  (optional) Whether to output messages. Defaults to TRUE.
+ *   (optional) Whether to output messages. Defaults to TRUE.
  *
  * @return
  *  TRUE/FALSE whether or not we were able to fix the file's permissions.
@@ -923,13 +921,11 @@ function drupal_requirements_url($severity) {
  *
  * @param string $profile
  *   Name of installation profile to check.
- * @param array $install_state
- *   The current state in the install process.
  *
  * @return array
  *   Array of the installation profile's requirements.
  */
-function drupal_check_profile($profile, array $install_state) {
+function drupal_check_profile($profile) {
   $info = install_profile_info($profile);
 
   // Collect requirement testing results.

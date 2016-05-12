@@ -27,10 +27,11 @@ class MigrateFieldInstanceTest extends MigrateDrupal6TestBase {
 
     $entity = Node::create(['type' => 'story']);
     // Test a text field.
+    /** @var \Drupal\field\FieldConfigInterface $field */
     $field = FieldConfig::load('node.story.field_test');
     $this->assertIdentical('Text Field', $field->label());
-    $expected = array('max_length' => 255);
-    $this->assertIdentical($expected, $field->getSettings());
+    // field_test is a text_long field, which have no settings.
+    $this->assertIdentical([], $field->getSettings());
     $this->assertIdentical('text for default value', $entity->field_test->value);
 
     // Test a number field.
@@ -60,6 +61,16 @@ class MigrateFieldInstanceTest extends MigrateDrupal6TestBase {
     $field = FieldConfig::load('node.story.field_test_email');
     $this->assertIdentical('Email Field', $field->label());
     $this->assertIdentical('benjy@example.com', $entity->field_test_email->value);
+
+    // Test image field.
+    $field = FieldConfig::load('node.story.field_test_imagefield');
+    $this->assertIdentical('Image Field', $field->label());
+    $field_settings = $field->getSettings();
+    $this->assertIdentical('', $field_settings['max_resolution']);
+    $this->assertIdentical('', $field_settings['min_resolution']);
+    $this->assertIdentical('', $field_settings['file_directory']);
+    $this->assertIdentical('png gif jpg jpeg', $field_settings['file_extensions']);
+    $this->assertIdentical('public', $field_settings['uri_scheme']);
 
     // Test a filefield.
     $field = FieldConfig::load('node.story.field_test_filefield');

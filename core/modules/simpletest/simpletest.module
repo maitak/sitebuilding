@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Provides testing functionality.
+ */
+
 use Drupal\Core\Asset\AttachedAssetsInterface;
 use Drupal\Core\Database\Database;
 use Drupal\Core\Render\Element;
@@ -7,11 +12,6 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\simpletest\TestBase;
 use Drupal\simpletest\TestDiscovery;
 use Symfony\Component\Process\PhpExecutableFinder;
-
-/**
- * @file
- * Provides testing functionality.
- */
 
 /**
  * Implements hook_help().
@@ -170,17 +170,22 @@ function simpletest_run_tests($test_list) {
  * @param $unescaped_test_classnames
  *   An array of test class names, including full namespaces, to be passed as
  *   a regular expression to PHPUnit's --filter option.
+ * @param int $status
+ *   (optional) The exit status code of the PHPUnit process will be assigned to
+ *   this variable.
  *
  * @return array
  *   The parsed results of PHPUnit's JUnit XML output, in the format of
  *   {simpletest}'s schema.
  */
-function simpletest_run_phpunit_tests($test_id, array $unescaped_test_classnames) {
+function simpletest_run_phpunit_tests($test_id, array $unescaped_test_classnames, &$status = NULL) {
   $phpunit_file = simpletest_phpunit_xml_filepath($test_id);
-  $ret = simpletest_phpunit_run_command($unescaped_test_classnames, $phpunit_file);
-  // A return value of 0 = passed test, 1 = failed test, > 1 indicates segfault
+  simpletest_phpunit_run_command($unescaped_test_classnames, $phpunit_file, $status);
+
+  $rows = simpletest_phpunit_xml_to_rows($test_id, $phpunit_file);
+  // A $status of 0 = passed test, 1 = failed test, > 1 indicates segfault
   // timeout, or other type of failure.
-  if ($ret > 1) {
+  if ($status > 1) {
     // Something broke during the execution of phpunit.
     // Return an error record of all failed classes.
     $rows[] = [
@@ -193,9 +198,6 @@ function simpletest_run_phpunit_tests($test_id, array $unescaped_test_classnames
       'line' => '0',
       'file' => $phpunit_file,
     ];
-  }
-  else {
-    $rows = simpletest_phpunit_xml_to_rows($test_id, $phpunit_file);
   }
   return $rows;
 }
@@ -251,11 +253,14 @@ function simpletest_phpunit_configuration_filepath() {
  *   a regular expression to PHPUnit's --filter option.
  * @param string $phpunit_file
  *   A filepath to use for PHPUnit's --log-junit option.
+ * @param int $status
+ *   (optional) The exit status code of the PHPUnit process will be assigned to
+ *   this variable.
  *
  * @return string
  *  The results as returned by exec().
  */
-function simpletest_phpunit_run_command(array $unescaped_test_classnames, $phpunit_file) {
+function simpletest_phpunit_run_command(array $unescaped_test_classnames, $phpunit_file, &$status = NULL) {
   // Setup an environment variable containing the database connection so that
   // functional tests can connect to the database.
   putenv('SIMPLETEST_DB=' . Database::getConnectionInfoAsUrl());
@@ -292,7 +297,8 @@ function simpletest_phpunit_run_command(array $unescaped_test_classnames, $phpun
 
   // exec in a subshell so that the environment is isolated when running tests
   // via the simpletest UI.
-  exec(join($command, " "), $output, $ret);
+  $ret = exec(join($command, " "), $output, $status);
+
   chdir($old_cwd);
   putenv('SIMPLETEST_DB=');
   return $ret;
@@ -482,9 +488,10 @@ function simpletest_log_read($test_id, $database_prefix, $test_class) {
  * each module for files matching the PSR-0 standard. Once loaded the test list
  * is cached and stored in a static variable.
  *
- * @param string $module
- *   Name of a module. If set then only tests belonging to this module are
- *   returned.
+ * @param string $extension
+ *   (optional) The name of an extension to limit discovery to; e.g., 'node'.
+ * @param string[] $types
+ *   An array of included test types.
  *
  * @return array[]
  *   An array of tests keyed with the groups, and then keyed by test classes.
@@ -499,8 +506,8 @@ function simpletest_log_read($test_id, $database_prefix, $test_class) {
  *     );
  *   @endcode
  */
-function simpletest_test_get_all($module = NULL) {
-  return \Drupal::service('test_discovery')->getTestClasses($module);
+function simpletest_test_get_all($extension = NULL, array $types = []) {
+  return \Drupal::service('test_discovery')->getTestClasses($extension, $types);
 }
 
 /**
@@ -534,24 +541,24 @@ function simpletest_classloader_register() {
  */
 function simpletest_generate_file($filename, $width, $lines, $type = 'binary-text') {
   $text = '';
-    for ($i = 0; $i < $lines; $i++) {
-      // Generate $width - 1 characters to leave space for the "\n" character.
-      for ($j = 0; $j < $width - 1; $j++) {
-        switch ($type) {
-          case 'text':
-            $text .= chr(rand(32, 126));
-            break;
-          case 'binary':
-            $text .= chr(rand(0, 31));
-            break;
-          case 'binary-text':
-          default:
-            $text .= rand(0, 1);
-            break;
-        }
+  for ($i = 0; $i < $lines; $i++) {
+    // Generate $width - 1 characters to leave space for the "\n" character.
+    for ($j = 0; $j < $width - 1; $j++) {
+      switch ($type) {
+        case 'text':
+          $text .= chr(rand(32, 126));
+          break;
+        case 'binary':
+          $text .= chr(rand(0, 31));
+          break;
+        case 'binary-text':
+        default:
+          $text .= rand(0, 1);
+          break;
       }
-      $text .= "\n";
     }
+    $text .= "\n";
+  }
 
   // Create filename.
   file_put_contents('public://' . $filename . '.txt', $text);

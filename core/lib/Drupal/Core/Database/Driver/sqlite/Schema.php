@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\Core\Database\Driver\sqlite\Schema.
- */
-
 namespace Drupal\Core\Database\Driver\sqlite;
 
 use Drupal\Component\Utility\Unicode;
@@ -17,6 +12,9 @@ use Drupal\Core\Database\Schema as DatabaseSchema;
  * @{
  */
 
+/**
+ * SQLite implementation of \Drupal\Core\Database\Schema.
+ */
 class Schema extends DatabaseSchema {
 
   /**

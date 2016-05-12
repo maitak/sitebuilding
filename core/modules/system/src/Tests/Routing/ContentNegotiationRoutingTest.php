@@ -1,12 +1,8 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\system\Tests\Routing\ContentNegotiationRoutingTest.
- */
-
 namespace Drupal\system\Tests\Routing;
 
+use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Drupal\simpletest\KernelTestBase;
 use Symfony\Component\HttpFoundation\Request;
@@ -31,7 +27,6 @@ class ContentNegotiationRoutingTest extends KernelTestBase {
     \Drupal::unsetContainer();
     parent::setUp();
 
-    $this->installSchema('system', ['router', 'url_alias']);
     \Drupal::service('router.builder')->rebuild();
   }
 
@@ -113,6 +108,18 @@ class ContentNegotiationRoutingTest extends KernelTestBase {
       // Verbose message since simpletest doesn't let us provide a message and
       // see the error.
       $this->assertTrue(TRUE, $message);
+
+      // Handle possible redirect.
+      if ($response->isRedirect()) {
+        $parsed = parse_url($response->headers->get('Location'));
+        $path = $parsed['path'];
+        if (isset($parsed['query'])) {
+          $path .= '?' . $parsed['query'];
+        }
+        $request = Request::create($path);
+        $response = $kernel->handle($request);
+      }
+
       $this->assertEqual($response->getStatusCode(), Response::HTTP_OK);
       $this->assertTrue(strpos($response->headers->get('Content-type'), $content_type) !== FALSE);
     }

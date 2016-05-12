@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\Core\Database\Driver\sqlite\Connection.
- */
-
 namespace Drupal\Core\Database\Driver\sqlite;
 
 use Drupal\Core\Database\Database;
@@ -12,7 +7,7 @@ use Drupal\Core\Database\DatabaseNotFoundException;
 use Drupal\Core\Database\Connection as DatabaseConnection;
 
 /**
- * Specific SQLite implementation of DatabaseConnection.
+ * SQLite implementation of \Drupal\Core\Database\Connection.
  */
 class Connection extends DatabaseConnection {
 
