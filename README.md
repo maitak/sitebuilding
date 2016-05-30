@@ -15,7 +15,7 @@ This installation is used as a base for new Amazee Drupal 8 installations. Unlik
 ## <a name="create-new"></a>Creating new Drupal 8 installation from d8-starter
 
 ### Prepare repository
-1. Prepare the Drupal 8 repository via [Jenkins](http://jenkins.amazee.io/job/AmazeeIO-SetupD8Github/build?delay=0sec)
+1. Prepare the Drupal 8 repository via [Jenkins](https://jenkins.amazeelabs.com/job/AmazeeIO-SetupD8Github/build?delay=0sec)
 2. use the future website url as repo_name i.e. example.com will get example_com (this makes it much easier for everyone to find the project)
 3. The new repository will be available under `github.com/AmazeeLabs/$REPO_NAME`
 
