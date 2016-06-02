@@ -26,9 +26,10 @@ Ask Bastian or Michael for now - Create a Ticket in your Jira project and assign
 
 ### Install site
 
-The following commands should be executed from the root of the newly created repository being logged in as a newly created bash user in the vagrant/dev.
+The following commands should be executed from the root of the newly created repository being logged in as a newly created bash user in the docker/dev.
 
 1. Run 'composer install' (it may be worthwhile seeing this https://www.drupal.org/node/2700999)
+( _More information and work required to confirm the next few steps_ )
 2. Update `sites/default/aliases.drushrc.php` with the GIT Repo and the Sitename (given by Bastian or Michi) *(if it is already the site_name you are already good)*
 3. Run `git submodule update --init` 
 4. Install Drupal  
@@ -53,9 +54,7 @@ After you done, export configuration and commit/push changes.
 ##  <a name="update-existing"></a>Updating a Drupal 8 installation based on d8-starter
 
 1. Make sure that d8-starter is updated to the latest Drupal core version, if it's not, [update it first](#user-content-update-starter-core)
-1. Remove the 'core' and 'vendor' directories. Also remove all of the files in the top-level directory, except any that you added manually. (see https://www.drupal.org/node/2700999)
-  - If you made modifications to files like .htaccess, composer.json, or robots.txt you will need to re-apply them from your backup, after the new files are in place.
-  
+
 1. Make sure you have d8-starter available as a remote  
 `git remote add d8-starter git@github.com:AmazeeLabs/d8-starter.git`
 1. Apply d8-starter changes
