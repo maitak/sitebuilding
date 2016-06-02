@@ -56,6 +56,7 @@ After you done, export configuration and commit/push changes.
 
 1.Remove the 'core' and 'vendor' directories. Also remove all of the files in the top-level directory, except any that you added manually. (see https://www.drupal.org/node/2700999)
   - If you made modifications to files like .htaccess, composer.json, or robots.txt you will need to re-apply them from your backup, after the new files are in place.
+  
 1. Make sure you have d8-starter available as a remote  
 `git remote add d8-starter git@github.com:AmazeeLabs/d8-starter.git`
 1. Apply d8-starter changes
