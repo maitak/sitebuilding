@@ -53,8 +53,7 @@ After you done, export configuration and commit/push changes.
 ##  <a name="update-existing"></a>Updating a Drupal 8 installation based on d8-starter
 
 1. Make sure that d8-starter is updated to the latest Drupal core version, if it's not, [update it first](#user-content-update-starter-core)
-
-1.Remove the 'core' and 'vendor' directories. Also remove all of the files in the top-level directory, except any that you added manually. (see https://www.drupal.org/node/2700999)
+1. Remove the 'core' and 'vendor' directories. Also remove all of the files in the top-level directory, except any that you added manually. (see https://www.drupal.org/node/2700999)
   - If you made modifications to files like .htaccess, composer.json, or robots.txt you will need to re-apply them from your backup, after the new files are in place.
   
 1. Make sure you have d8-starter available as a remote  
