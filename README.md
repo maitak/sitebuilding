@@ -63,8 +63,9 @@ After you done, export configuration and commit/push changes.
   `git fetch d8-starter`
   1. Merge changes into your Drupal 8 installation's dev  
   `chmod 755 sites/default && git merge d8-starter/core`
-  1. Run 'composer install' ( _More information and work required to confirm the next few steps_ )
-  1. Update Drupal database (inside Vagrant)  
+
+1. Run 'composer install' ( _More information and work required to confirm the next few steps_ )
+1. Update Drupal database (inside Vagrant)  
   `drush updb`
 
 ##  <a name="improve-starter"></a>Working on d8-starter
