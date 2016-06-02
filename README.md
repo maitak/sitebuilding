@@ -19,26 +19,38 @@ This installation is used as a base for new Amazee Drupal 8 installations. Unlik
 2. use the future website url as repo_name i.e. example.com will get example_com (this makes it much easier for everyone to find the project)
 3. The new repository will be available under `github.com/AmazeeLabs/$REPO_NAME`
 
-
 ### Prepare server environment
 
 Ask Bastian or Michael for now - Create a Ticket in your Jira project and assign it to one of them.
 
 ### Install site
 
-The following commands should be executed from the root of the newly created repository being logged in as a newly created bash user in the docker/dev.
+The following commands should be executed from the root of the newly created repository, via your terminal from ~/git/repo_name
 
-1. Run 'composer install' (it may be worthwhile seeing this https://www.drupal.org/node/2700999)
-( _More information and work required to confirm the next few steps_ )
-2. Update `sites/default/aliases.drushrc.php` with the GIT Repo and the Sitename (given by Bastian or Michi) *(if it is already the site_name you are already good)*
-3. Run `git submodule update --init` 
-4. Install Drupal  
-`drush site-install config_installer` (this will take some minutes)
-5. Remove this file (README.md)  
+1. Update `sites/default/aliases.drushrc.php` with the GIT Repo and the Sitename (given by Bastian or Michi) *(if it is already the site_name you are already good)*
+1. Check your docker-compose.yml for the correct sitename.
+1. `cd d8-starter`
+  1. Run `git submodule update --init` 
+1. Run `npm install`
+1. Get Docker Running (https://docs.amazee.io/step_by_step_guides/get_your_drupal_site_running_on_amazeeio.html)
+  1. `docker-compose up -d`
+  1. `docker-compose exec --user drupal drupal bash`
+1. Install Drupal, sync DB and files.
+  1. `composer install` (we no longer use `drush site-install config_installer`)
+  1. `dsql @dev`
+  1. `dfiles @dev`
+
+1. `exit` docker bash container or open new terminal window and go to the ~/git/repo_name
+  1. `gulp compile` to compile the sass.
+
+1. If you exited above: `docker-compose exec --user drupal drupal bash`
+  1. `drush cr`
+ 
+1. Remove this file (README.md)  
 `rm README.md`  
 or replace its contents with relevant information  
 `echo 'Repository for the <SITENAME>.' > README.md`
-6. Commit and push changes  
+1. Commit and push changes  
 `git add . && git commit -m '<TICKET-123> Prepared <SITENAME> installation' && git push`
 
 ### Configure site
@@ -50,6 +62,7 @@ Review the configuration pages to see if some information (like the site name) s
 - `admin/config/media/file-system`
 
 After you done, export configuration and commit/push changes.
+- Read this for more Config Management info: http://confluence.amazeelabs.com/display/KNOWLEDGE/Drupal+8+Configuration+Management
 
 ##  <a name="update-existing"></a>Updating a Drupal 8 installation based on d8-starter
 
@@ -63,7 +76,6 @@ After you done, export configuration and commit/push changes.
   1. Merge changes into your Drupal 8 installation's dev  
   `chmod 755 sites/default && git merge d8-starter/core`
 
-1. Run 'composer install' ( _More information and work required to confirm the next few steps_ )
 1. Update Drupal database (inside Vagrant)  
   `drush updb`
 
