@@ -28,15 +28,16 @@ Ask Bastian or Michael for now - Create a Ticket in your Jira project and assign
 
 The following commands should be executed from the root of the newly created repository being logged in as a newly created bash user in the vagrant/dev.
 
-1. Update `sites/default/aliases.drushrc.php` with the GIT Repo and the Sitename (given by Bastian or Michi) *(if it is already the site_name you are already good)*
-1. Run `git submodule update --init` 
-1. Install Drupal  
+1. Run 'composer install' (it may be worthwhile seeing this https://www.drupal.org/node/2700999)
+2. Update `sites/default/aliases.drushrc.php` with the GIT Repo and the Sitename (given by Bastian or Michi) *(if it is already the site_name you are already good)*
+3. Run `git submodule update --init` 
+4. Install Drupal  
 `drush site-install config_installer` (this will take some minutes)
-1. Remove this file (README.md)  
+5. Remove this file (README.md)  
 `rm README.md`  
 or replace its contents with relevant information  
 `echo 'Repository for the <SITENAME>.' > README.md`
-1. Commit and push changes  
+6. Commit and push changes  
 `git add . && git commit -m '<TICKET-123> Prepared <SITENAME> installation' && git push`
 
 ### Configure site
