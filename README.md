@@ -35,6 +35,10 @@ The following commands should be executed from the root of the newly created rep
 1. Get Docker Running (https://docs.amazee.io/step_by_step_guides/get_your_drupal_site_running_on_amazeeio.html)
   1. `docker-compose up -d`
   1. `docker-compose exec --user drupal drupal bash`
+   OR
+  1. `docker-compose exec --user drupal d8-starter.docker.amazee.io bash`
+
+
 1. Install Drupal, sync DB and files.
   1. `composer install` (we no longer use `drush site-install config_installer`)
   1. `dsql @dev`
