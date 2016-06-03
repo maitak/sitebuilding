@@ -45,3 +45,6 @@ css/map
 
 # Ignore npm debugs
 npm-debug.log
+
+# Ignore composer dependencies.
+/vendor
