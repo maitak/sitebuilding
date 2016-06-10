@@ -79,7 +79,9 @@ After you done, export configuration and commit/push changes.
   `git fetch d8-starter`
   1. Merge changes into your Drupal 8 installation's dev  
   `chmod 755 sites/default && git merge d8-starter/core` (for the 8.0.6 version)
-  2. If you want the new Composer 8.1.1 version switch to d8-starter/core-8.1.1 (you'll need to run composer install)
+  2. If you want the new Composer 8.1.1 version switch to d8-starter/core-8.1.1 
+    1. With 8.1.1: You'll need to run `composer install` locally
+    2. And you'll need to update your .amazeeio.yml file for your project - adding composer install. See: https://github.com/AmazeeLabs/d8-starter/blob/dev/.amazeeio.yml
 
 1. Update Drupal database (inside Vagrant)  
   `drush updb`
