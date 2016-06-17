@@ -32,9 +32,10 @@ if (getenv('AMAZEEIO_VARNISH_HOSTS') && getenv('AMAZEEIO_VARNISH_SECRET')) {
 
   $settings['reverse_proxy'] = TRUE;
   $settings['reverse_proxy_addresses'] = array_merge(explode(',', getenv('AMAZEEIO_VARNISH_HOSTS')), array('127.0.0.1'));
-  $settings['varnish_control_terminal'] = implode($varnish_hosts, " ");
-  $settings['varnish_control_key'] = getenv('AMAZEEIO_VARNISH_SECRET');
-  $settings['varnish_version'] = 4;
+  
+  $config['varnish.settings']['varnish_control_terminal'] = implode($varnish_hosts, " ");
+  $config['varnish.settings']['varnish_control_key'] = getenv('AMAZEEIO_VARNISH_SECRET');
+  $config['varnish.settings']['varnish_version'] = 4;
 }
 
 ### AMAZEE.IO Database connection
