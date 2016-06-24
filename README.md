@@ -77,13 +77,14 @@ After you done, export configuration and commit/push changes.
 1. Apply d8-starter changes
   1. Fetch updates from d8-starter  
   `git fetch d8-starter`
-  1. Merge changes into your Drupal 8 installation's dev  
-  `chmod 755 sites/default && git merge d8-starter/core` (for the 8.0.6 version)
+    1. Merge changes into your Drupal 8 installation's dev  
+    `chmod 755 sites/default && git merge d8-starter/core` (for the *8.0.x* version)
   OR  
-  1. If you want the new Composer 8.1.1 version:
+  1. *If you want to upgrade from 8.0.x to the new 8.1.x version*:
     1. First remove the `/vendor` dir and commit this.
     2. add `/vendor` to `.gitignore` so it is not committed again (if not already done)
-    3. Run `chmod 755 sites/default && git merge d8-starter/core-8.1.1` 
+  1.Then run this (this also applies If you are just updating 8.1.x versions:)
+    3. Run `chmod 755 sites/default && git merge d8-starter/core-8.1.3` 
     4. Fix any merge conflicts: Probably composer.json and composer.lock
     3. add `composer install` to all `before_deploy ` sections of `.amazeeio.yml`, E.g. https://github.com/AmazeeLabs/d8-starter/blob/dev/.amazeeio.yml 
     4. Add this and commit.
