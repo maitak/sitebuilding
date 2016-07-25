@@ -9,7 +9,7 @@ id: paragraph.discovery.field_discovery
 field_name: field_discovery
 entity_type: paragraph
 bundle: discovery
-label: Discovery
+label: 'Discovery Text'
 description: ''
 required: false
 translatable: false

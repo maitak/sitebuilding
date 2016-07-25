@@ -9,7 +9,7 @@ id: paragraph.answer.field_answer
 field_name: field_answer
 entity_type: paragraph
 bundle: answer
-label: Answer
+label: 'Answer Text'
 description: 'A specific answer to a set of answers available for a required question.'
 required: false
 translatable: false

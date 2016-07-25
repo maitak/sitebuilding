@@ -11,7 +11,7 @@ id: node.survey.field_component
 field_name: field_component
 entity_type: node
 bundle: survey
-label: Component
+label: 'Component Set'
 description: 'A component can have an unlimited amount of questions; each of which can have an unlimited amount of answers.'
 required: false
 translatable: false
@@ -31,5 +31,8 @@ settings:
         weight: 5
       question:
         weight: 6
+        enabled: false
+      discovery:
+        weight: 7
         enabled: false
 field_type: entity_reference_revisions
