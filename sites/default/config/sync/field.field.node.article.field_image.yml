@@ -1,4 +1,4 @@
-uuid: f6102e7e-cd7a-44ab-ba2b-431d2dbf5c60
+uuid: d08c6bf8-444e-4599-ba85-35a843cac08e
 langcode: en
 status: true
 dependencies:
@@ -7,6 +7,8 @@ dependencies:
     - node.type.article
   module:
     - image
+_core:
+  default_config_hash: tgJzhA7Swh4M_gWU5FwFe5lPxPj5rebpMbvhpdNrERs
 id: node.article.field_image
 field_name: field_image
 entity_type: node
@@ -18,7 +20,7 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  file_directory: field/image
+  file_directory: '[date:custom:Y]-[date:custom:m]'
   file_extensions: 'png gif jpg jpeg'
   max_filesize: ''
   max_resolution: ''

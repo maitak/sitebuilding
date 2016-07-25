@@ -1,10 +1,12 @@
-uuid: 7c16f678-cf76-4ffe-ad23-3562129b714d
+uuid: e13da04b-388f-42f8-96ff-4e842b9e7348
 langcode: en
 status: true
 dependencies:
   module:
     - block_content
     - user
+_core:
+  default_config_hash: tp4wP6wVrEPZfApiCfkpoCxUzN-B1ceGcGv5sEzQ2Sg
 id: block_content
 label: 'Custom block library'
 module: views
@@ -53,8 +55,8 @@ display:
           id: 0
           total_pages: null
           tags:
-            previous: '‹ previous'
-            next: 'next ›'
+            previous: '‹ Previous'
+            next: 'Next ›'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -393,7 +395,7 @@ display:
           plugin_id: string
         type:
           id: type
-          table: block_content_field_data
+          table: block_content
           field: type
           relationship: none
           group_type: group
@@ -463,13 +465,13 @@ display:
       arguments: {  }
       display_extenders: {  }
     cache_metadata:
-      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - user.permissions
+      max-age: 0
       tags: {  }
   page_1:
     display_plugin: page
@@ -488,11 +490,11 @@ display:
         context: '0'
         menu_name: admin
     cache_metadata:
-      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - user.permissions
+      max-age: 0
       tags: {  }

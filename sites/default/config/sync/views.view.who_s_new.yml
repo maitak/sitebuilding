@@ -1,9 +1,11 @@
-uuid: b8a12148-73e5-4c72-bf00-a82fbad4156a
+uuid: 3e1be8d6-15ad-4669-8e05-4b90bd9723c6
 langcode: en
 status: true
 dependencies:
   module:
     - user
+_core:
+  default_config_hash: B2M6BoNVm-hHVnH2ILCpbhCZV71T6zLNs8Ag5QH-oNE
 id: who_s_new
 label: 'Who''s new'
 module: user
@@ -166,11 +168,11 @@ display:
       arguments: {  }
       display_extenders: {  }
     cache_metadata:
-      max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - user.permissions
+      max-age: -1
       tags: {  }
   block_1:
     display_plugin: block
@@ -183,9 +185,9 @@ display:
       block_category: User
       display_extenders: {  }
     cache_metadata:
-      max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - user.permissions
+      max-age: -1
       tags: {  }

@@ -1,0 +1,12 @@
+uuid: 11562acb-6e20-492d-ba56-88cb12a80381
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: c4zaT5cyPxuTXI6JOWt3qRtMvICT9tHB6d9a5VG-CmQ
+id: feedback
+label: 'Website feedback'
+recipients:
+  - dan@danlemon.com
+reply: ''
+weight: 0

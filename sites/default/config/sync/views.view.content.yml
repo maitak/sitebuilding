@@ -1,10 +1,12 @@
-uuid: bf6662f6-361e-418b-b562-98c2b4d28ddb
+uuid: 192a0d94-1b15-407d-93a5-500c4a110e85
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - user
+_core:
+  default_config_hash: YIwhIF9MSP1E_HMam6MrYeti_UqMXQiLDMjDsPFKK8s
 id: content
 label: Content
 module: node
@@ -39,10 +41,10 @@ display:
         options:
           items_per_page: 50
           tags:
-            previous: '‹ previous'
-            next: 'next ›'
-            first: '« first'
-            last: 'last »'
+            previous: '‹ Previous'
+            next: 'Next ›'
+            first: '« First'
+            last: 'Last »'
       style:
         type: table
         options:
@@ -182,7 +184,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Content Type'
+          label: 'Content type'
           exclude: false
           alter:
             alter_text: false
@@ -422,7 +424,7 @@ display:
           exposed: true
           expose:
             operator_id: type_op
-            label: Type
+            label: 'Content type'
             description: ''
             use_operator: false
             operator: type_op
@@ -561,7 +563,6 @@ display:
     id: default
     position: 0
     cache_metadata:
-      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
@@ -570,6 +571,7 @@ display:
         - user
         - 'user.node_grants:view'
         - user.permissions
+      max-age: 0
       tags: {  }
   page_1:
     display_options:
@@ -593,7 +595,6 @@ display:
     id: page_1
     position: 1
     cache_metadata:
-      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
@@ -602,4 +603,5 @@ display:
         - user
         - 'user.node_grants:view'
         - user.permissions
+      max-age: 0
       tags: {  }

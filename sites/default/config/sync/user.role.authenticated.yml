@@ -1,13 +1,14 @@
-uuid: eb9a0e8c-7922-4e82-8b03-3d331a6f55ac
+uuid: 15bc1e57-afbb-42be-b9d9-afa86617b6ca
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
 id: authenticated
 label: 'Authenticated user'
 weight: 1
 is_admin: false
 permissions:
-  - 'use text format plain_text'
   - 'access content'
   - 'use text format basic_html'
   - 'access comments'
@@ -15,3 +16,4 @@ permissions:
   - 'skip comment approval'
   - 'access site-wide contact form'
   - 'access shortcuts'
+  - 'search content'

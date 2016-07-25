@@ -1,17 +1,21 @@
-uuid: 7b533dab-aca3-49eb-9f2d-452dc778edec
+uuid: acdda066-db35-4754-b537-1181c80cb2eb
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.article.body
+    - field.field.node.article.comment
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
     - image.style.thumbnail
     - node.type.article
   module:
+    - comment
     - image
     - path
     - text
+_core:
+  default_config_hash: 7CvVDwPYotAZFBa36mcpMKZOfVRRp_iGuPHpHaavI6E
 id: node.article.default
 targetEntityType: node
 bundle: article
@@ -24,6 +28,11 @@ content:
       rows: 9
       summary_rows: 3
       placeholder: ''
+    third_party_settings: {  }
+  comment:
+    type: comment_default
+    weight: 20
+    settings: {  }
     third_party_settings: {  }
   created:
     type: datetime_timestamp

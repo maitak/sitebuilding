@@ -1,9 +1,11 @@
-uuid: 43b12358-0e58-416c-9801-1efeb2bd6ddd
+uuid: 9c597892-9fd8-40f5-9964-dab4297e6e61
 langcode: en
 status: true
 dependencies:
   module:
     - user
+_core:
+  default_config_hash: DWLCIpl8ku4NbiI9t3GgDeuW13KSOy2l1zho7ReP_Bg
 id: who_s_online
 label: 'Who''s online block'
 module: user
@@ -196,11 +198,11 @@ display:
       arguments: {  }
       display_extenders: {  }
     cache_metadata:
-      max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - user.permissions
+      max-age: -1
       tags: {  }
   who_s_online_block:
     display_plugin: block
@@ -212,9 +214,9 @@ display:
       display_description: 'A list of users that are currently logged in.'
       display_extenders: {  }
     cache_metadata:
-      max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - user.permissions
+      max-age: -1
       tags: {  }

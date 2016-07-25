@@ -1,7 +1,9 @@
-uuid: fc31eadb-8686-4d04-8d00-e776dd1e3467
+uuid: 0351cc2d-e74e-4250-b37d-b49086a7c612
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: KUjJ8Ti_ZJSlhGM88E_mhJP-8mmQRNUB6RFof615Kt0
 name: 'Restricted HTML'
 format: restricted_html
 weight: 0
@@ -28,9 +30,3 @@ filters:
     weight: 0
     settings:
       filter_url_length: 72
-  filter_htmlcorrector:
-    id: filter_htmlcorrector
-    provider: filter
-    status: true
-    weight: 10
-    settings: {  }

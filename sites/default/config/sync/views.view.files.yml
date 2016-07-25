@@ -1,10 +1,12 @@
-uuid: ddbb7a37-dc5d-4a6f-9203-3b68c8ec6e27
+uuid: 19b65db1-8fa5-475b-a593-d5f03c3f38e0
 langcode: en
 status: true
 dependencies:
   module:
     - file
     - user
+_core:
+  default_config_hash: rRWxAX-IQkJ5viACQRovRkC784EyCl9493GU_G23n2Q
 id: files
 label: Files
 module: file
@@ -53,8 +55,8 @@ display:
           id: 0
           total_pages: 0
           tags:
-            previous: '‹ previous'
-            next: 'next ›'
+            previous: '‹ Previous'
+            next: 'Next ›'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -248,7 +250,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Mime type'
+          label: 'MIME type'
           exclude: false
           alter:
             alter_text: false
@@ -624,7 +626,7 @@ display:
           exposed: true
           expose:
             operator_id: filemime_op
-            label: 'Mime type'
+            label: 'MIME type'
             description: ''
             use_operator: false
             operator: filemime_op
@@ -718,13 +720,13 @@ display:
       show_admin_links: true
       display_extenders: {  }
     cache_metadata:
-      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - user.permissions
+      max-age: 0
       tags: {  }
   page_1:
     display_plugin: page
@@ -755,13 +757,13 @@ display:
           required: false
       display_extenders: {  }
     cache_metadata:
-      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - user.permissions
+      max-age: 0
       tags: {  }
   page_2:
     display_plugin: page
@@ -792,8 +794,8 @@ display:
           id: 0
           total_pages: 0
           tags:
-            previous: '‹ previous'
-            next: 'next ›'
+            previous: '‹ Previous'
+            next: 'Next ›'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -1113,10 +1115,10 @@ display:
           required: true
       display_extenders: {  }
     cache_metadata:
-      max-age: 0
       contexts:
         - 'languages:language_interface'
         - url
         - url.query_args
         - user.permissions
+      max-age: 0
       tags: {  }

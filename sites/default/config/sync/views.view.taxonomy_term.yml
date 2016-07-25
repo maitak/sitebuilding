@@ -1,4 +1,4 @@
-uuid: 3720709c-4a70-4c85-8f17-236a00e0cf2a
+uuid: 3a8cf01b-6a9c-42af-856d-85e035653fcb
 langcode: en
 status: true
 dependencies:
@@ -8,6 +8,8 @@ dependencies:
     - node
     - taxonomy
     - user
+_core:
+  default_config_hash: YY-QIsPmXCITvYjAnlCzaqASCB1Telev3U0IKOztZkc
 id: taxonomy_term
 label: 'Taxonomy term'
 module: taxonomy
@@ -244,13 +246,13 @@ display:
       link_url: ''
       link_display: page_1
     cache_metadata:
-      max-age: -1
       contexts:
         - 'languages:language_interface'
         - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
+      max-age: -1
       tags: {  }
   feed_1:
     id: feed_1
@@ -283,12 +285,12 @@ display:
           view_mode: default
       display_extenders: {  }
     cache_metadata:
-      max-age: -1
       contexts:
         - 'languages:language_interface'
         - url
         - 'user.node_grants:view'
         - user.permissions
+      max-age: -1
       tags: {  }
   page_1:
     id: page_1
@@ -302,11 +304,11 @@ display:
       path: taxonomy/term/%
       display_extenders: {  }
     cache_metadata:
-      max-age: -1
       contexts:
         - 'languages:language_interface'
         - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
+      max-age: -1
       tags: {  }

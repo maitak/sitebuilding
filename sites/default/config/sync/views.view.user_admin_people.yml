@@ -1,9 +1,11 @@
-uuid: b20d0a41-bfba-4ee5-bb00-cecfd70863b0
+uuid: 5a0cd761-f726-4187-903c-e7d166ce7934
 langcode: en
 status: true
 dependencies:
   module:
     - user
+_core:
+  default_config_hash: queuLjhKGUQ_b-lNh_TkhCvOPrVunfJopvVGOf3cjAo
 id: user_admin_people
 label: People
 module: user
@@ -51,10 +53,10 @@ display:
           id: 0
           total_pages: 0
           tags:
-            previous: '‹ previous'
-            next: 'next ›'
-            first: '« first'
-            last: 'last »'
+            previous: '‹ Previous'
+            next: 'Next ›'
+            first: '« First'
+            last: 'Last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -870,13 +872,13 @@ display:
           1: AND
       display_extenders: {  }
     cache_metadata:
-      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - user.permissions
+      max-age: 0
       tags: {  }
   page_1:
     display_plugin: page
@@ -903,11 +905,11 @@ display:
         show_admin_links: false
       display_extenders: {  }
     cache_metadata:
-      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - user.permissions
+      max-age: 0
       tags: {  }
