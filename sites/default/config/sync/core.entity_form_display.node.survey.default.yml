@@ -54,7 +54,7 @@ content:
     weight: 0
     settings:
       size: 60
-      placeholder: ''
+      placeholder: 'e.g. Privacy Issues Survey'
     third_party_settings: {  }
   uid:
     type: options_select
