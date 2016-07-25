@@ -24,7 +24,7 @@ content:
     weight: 2
     settings:
       size: 60
-      placeholder: ''
+      placeholder: 'e.g. Your organisation should be concerned about privacy.'
     third_party_settings: {  }
   field_score:
     weight: 1

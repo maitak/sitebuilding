@@ -13,9 +13,7 @@ label: Discovery
 description: 'Discovery response text associated to an answer.'
 required: false
 translatable: false
-default_value:
-  -
-    value: 'e.g. Your organisation should be concerned about privacy.'
+default_value: {  }
 default_value_callback: ''
 settings: {  }
 field_type: string
