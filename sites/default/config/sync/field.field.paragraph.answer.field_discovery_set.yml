@@ -1,0 +1,38 @@
+uuid: b5130598-ef32-4f52-9021-66f049db8d8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_discovery_set
+    - paragraphs.paragraphs_type.answer
+  module:
+    - entity_reference_revisions
+id: paragraph.answer.field_discovery_set
+field_name: field_discovery_set
+entity_type: paragraph
+bundle: answer
+label: 'Discovery Set'
+description: 'A set of discoveries for this selected answer.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      discovery: discovery
+    target_bundles_drag_drop:
+      answer:
+        weight: 5
+        enabled: false
+      component:
+        weight: 6
+        enabled: false
+      discovery:
+        enabled: true
+        weight: 7
+      question:
+        weight: 8
+        enabled: false
+field_type: entity_reference_revisions

@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.answer.field_answer
-    - field.field.paragraph.answer.field_discovery
+    - field.field.paragraph.answer.field_discovery_set
     - field.field.paragraph.answer.field_score
     - paragraphs.paragraphs_type.answer
+  module:
+    - paragraphs
 id: paragraph.answer.default
 targetEntityType: paragraph
 bundle: answer
@@ -19,12 +21,15 @@ content:
       placeholder: 'e.g. Yes, No'
     third_party_settings: {  }
     type: string_textfield
-  field_discovery:
-    type: string_textfield
+  field_discovery_set:
+    type: entity_reference_paragraphs
     weight: 2
     settings:
-      size: 60
-      placeholder: 'e.g. Your organisation should be concerned about privacy.'
+      title: Discovery
+      title_plural: Discoveries
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
     third_party_settings: {  }
   field_score:
     weight: 1

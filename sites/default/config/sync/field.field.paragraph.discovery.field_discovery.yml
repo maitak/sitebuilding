@@ -1,16 +1,16 @@
-uuid: f79bbd4a-d751-4830-8f73-89501680c889
+uuid: 0b192803-fa7b-49eb-b2a2-94bc84b1d2b2
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_discovery
-    - paragraphs.paragraphs_type.answer
-id: paragraph.answer.field_discovery
+    - paragraphs.paragraphs_type.discovery
+id: paragraph.discovery.field_discovery
 field_name: field_discovery
 entity_type: paragraph
-bundle: answer
+bundle: discovery
 label: Discovery
-description: 'Discovery response text associated to an answer.'
+description: ''
 required: false
 translatable: false
 default_value: {  }

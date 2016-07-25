@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.answer.field_answer
-    - field.field.paragraph.answer.field_discovery
+    - field.field.paragraph.answer.field_discovery_set
     - field.field.paragraph.answer.field_score
     - paragraphs.paragraphs_type.answer
+  module:
+    - entity_reference_revisions
 id: paragraph.answer.default
 targetEntityType: paragraph
 bundle: answer
@@ -19,6 +21,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+  field_discovery_set:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
   field_score:
     weight: 1
     label: above
@@ -29,5 +39,4 @@ content:
     type: number_integer
 hidden:
   created: true
-  field_discovery: true
   uid: true
