@@ -16,7 +16,7 @@ content:
     weight: 0
     label: above
     settings:
-      link_to_entity: true
+      link_to_entity: false
     third_party_settings: {  }
     type: string
   field_score:
