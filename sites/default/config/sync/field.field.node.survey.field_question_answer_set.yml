@@ -1,0 +1,33 @@
+uuid: 2b3857ad-62cd-4f67-a2b7-3fea36bdffb9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_question_answer_set
+    - node.type.survey
+  module:
+    - entity_reference_revisions
+id: node.survey.field_question_answer_set
+field_name: field_question_answer_set
+entity_type: node
+bundle: survey
+label: 'Question & Answer Set'
+description: 'A set of question and answers for use in a survey.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      answer: answer
+      question: question
+    target_bundles_drag_drop:
+      answer:
+        weight: 3
+        enabled: false
+      question:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

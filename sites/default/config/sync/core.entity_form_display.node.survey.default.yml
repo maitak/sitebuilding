@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.survey.body
+    - field.field.node.survey.field_question_answer_set
     - node.type.survey
   module:
+    - paragraphs
     - path
     - text
 id: node.survey.default
@@ -25,6 +27,16 @@ content:
     type: datetime_timestamp
     weight: 10
     settings: {  }
+    third_party_settings: {  }
+  field_question_answer_set:
+    type: entity_reference_paragraphs
+    weight: 32
+    settings:
+      title: 'Question & Answer'
+      title_plural: 'Questions & Answers'
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
     third_party_settings: {  }
   path:
     type: path

@@ -1,0 +1,33 @@
+uuid: 8459ac52-8fbd-4d55-bcf4-7a66931e18e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_answer_set
+    - paragraphs.paragraphs_type.question
+  module:
+    - entity_reference_revisions
+id: paragraph.question.field_answer_set
+field_name: field_answer_set
+entity_type: paragraph
+bundle: question
+label: 'Answer Set'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      question: question
+      answer: answer
+    target_bundles_drag_drop:
+      question:
+        weight: -5
+        enabled: false
+      answer:
+        weight: -4
+        enabled: false
+field_type: entity_reference_revisions

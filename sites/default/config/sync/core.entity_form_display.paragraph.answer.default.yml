@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.answer.field_answer
+    - field.field.paragraph.answer.field_score
     - paragraphs.paragraphs_type.answer
 id: paragraph.answer.default
 targetEntityType: paragraph
@@ -14,9 +15,15 @@ content:
     weight: 0
     settings:
       size: 60
-      placeholder: ''
+      placeholder: 'e.g. Yes, No'
     third_party_settings: {  }
     type: string_textfield
+  field_score:
+    weight: 1
+    settings:
+      placeholder: 'e.g. 0, 1, 2'
+    third_party_settings: {  }
+    type: number
 hidden:
   created: true
   status: true

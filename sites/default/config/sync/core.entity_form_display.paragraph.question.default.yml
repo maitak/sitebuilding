@@ -3,18 +3,31 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.question.field_answer_set
     - field.field.paragraph.question.field_question
     - paragraphs.paragraphs_type.question
+  module:
+    - paragraphs
 id: paragraph.question.default
 targetEntityType: paragraph
 bundle: question
 mode: default
 content:
+  field_answer_set:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Answer
+      title_plural: Answers
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+    third_party_settings: {  }
   field_question:
     weight: 0
     settings:
-      size: 60
-      placeholder: ''
+      size: 40
+      placeholder: 'e.g. Is privacy a concern for your organisation ?'
     third_party_settings: {  }
     type: string_textfield
 hidden:

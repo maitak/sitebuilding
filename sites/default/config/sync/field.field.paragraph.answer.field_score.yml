@@ -1,0 +1,23 @@
+uuid: fef70424-17fd-4af4-9386-5cea62d04efe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_score
+    - paragraphs.paragraphs_type.answer
+id: paragraph.answer.field_score
+field_name: field_score
+entity_type: paragraph
+bundle: answer
+label: Score
+description: 'The score associated with this answer.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ' point| points'
+field_type: integer

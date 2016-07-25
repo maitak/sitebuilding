@@ -11,8 +11,8 @@ id: node.survey.body
 field_name: body
 entity_type: node
 bundle: survey
-label: Body
-description: ''
+label: Description
+description: 'The description of this survey.'
 required: false
 translatable: true
 default_value: {  }

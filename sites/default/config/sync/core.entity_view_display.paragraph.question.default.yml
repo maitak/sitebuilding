@@ -3,13 +3,24 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.question.field_answer_set
     - field.field.paragraph.question.field_question
     - paragraphs.paragraphs_type.question
+  module:
+    - entity_reference_revisions
 id: paragraph.question.default
 targetEntityType: paragraph
 bundle: question
 mode: default
 content:
+  field_answer_set:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
   field_question:
     weight: 0
     label: above
