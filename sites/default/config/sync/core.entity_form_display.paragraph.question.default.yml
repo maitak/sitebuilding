@@ -1,0 +1,23 @@
+uuid: 0d05db67-7220-40f8-b12f-60fe965a7054
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.question.field_question
+    - paragraphs.paragraphs_type.question
+id: paragraph.question.default
+targetEntityType: paragraph
+bundle: question
+mode: default
+content:
+  field_question:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  created: true
+  status: true
+  uid: true

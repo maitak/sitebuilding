@@ -1,0 +1,23 @@
+uuid: d4627193-18a9-4b93-b266-4a314f431df9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.answer.field_answer
+    - paragraphs.paragraphs_type.answer
+id: paragraph.answer.default
+targetEntityType: paragraph
+bundle: answer
+mode: default
+content:
+  field_answer:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  created: true
+  status: true
+  uid: true
