@@ -1,0 +1,18 @@
+uuid: 6a138241-17cf-448b-a19c-b6bd1387910d
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Survey
+type: survey
+description: 'Create a new survey and add an unlimited amount of questions.'
+help: "Survey content type, an unlimited about of questions can be added to this survey. Each question can have a required validation added to it.\r\n"
+new_revision: false
+preview_mode: 2
+display_submitted: true
