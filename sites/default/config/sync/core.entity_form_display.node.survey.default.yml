@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.survey.body
-    - field.field.node.survey.field_question_answer_set
+    - field.field.node.survey.field_component
     - node.type.survey
   module:
     - paragraphs
@@ -17,57 +17,49 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 31
+    weight: 1
     settings:
       rows: 9
+      placeholder: 'e.g. This survey is about the latest javascript frameworks.'
       summary_rows: 3
-      placeholder: ''
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 5
     settings: {  }
     third_party_settings: {  }
-  field_question_answer_set:
+  field_component:
     type: entity_reference_paragraphs
-    weight: 32
+    weight: 2
     settings:
-      title: 'Question & Answer'
-      title_plural: 'Questions & Answers'
+      title: Component
+      title_plural: Components
       edit_mode: open
       add_mode: dropdown
       form_display_mode: default
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 3
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
+    weight: 6
     settings:
-      display_label: true
-    weight: 15
-    third_party_settings: {  }
-  sticky:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 16
+      display_label: false
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   uid:
-    type: entity_reference_autocomplete
-    weight: 5
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    type: options_select
+    weight: 4
+    settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  sticky: true

@@ -11,7 +11,7 @@ entity_type: paragraph
 bundle: answer
 label: Answer
 description: 'A specific answer to a set of answers available for a required question.'
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

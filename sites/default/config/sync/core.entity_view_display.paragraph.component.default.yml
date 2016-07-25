@@ -1,0 +1,33 @@
+uuid: 9890d7d0-8455-4633-ace3-735c9113c809
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.component.field_question_answer_set
+    - field.field.paragraph.component.field_title
+    - paragraphs.paragraphs_type.component
+  module:
+    - entity_reference_revisions
+id: paragraph.component.default
+targetEntityType: paragraph
+bundle: component
+mode: default
+content:
+  field_question_answer_set:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_title:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  created: true
+  uid: true

@@ -1,0 +1,36 @@
+uuid: 71a8dc79-f4d1-4b10-b770-10eae50491b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.component.field_question_answer_set
+    - field.field.paragraph.component.field_title
+    - paragraphs.paragraphs_type.component
+  module:
+    - paragraphs
+id: paragraph.component.default
+targetEntityType: paragraph
+bundle: component
+mode: default
+content:
+  field_question_answer_set:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+    third_party_settings: {  }
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  created: true
+  status: true
+  uid: true

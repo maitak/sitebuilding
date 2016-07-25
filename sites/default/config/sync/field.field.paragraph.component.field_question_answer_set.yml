@@ -1,19 +1,19 @@
-uuid: 2b3857ad-62cd-4f67-a2b7-3fea36bdffb9
+uuid: 91e79797-efa7-401f-a975-ec5ab21bceb2
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_question_answer_set
-    - node.type.survey
+    - field.storage.paragraph.field_question_answer_set
+    - paragraphs.paragraphs_type.component
   module:
     - entity_reference_revisions
-id: node.survey.field_question_answer_set
+id: paragraph.component.field_question_answer_set
 field_name: field_question_answer_set
-entity_type: node
-bundle: survey
+entity_type: paragraph
+bundle: component
 label: 'Question & Answer Set'
-description: 'A set of question and answers for use in a survey.'
-required: true
+description: 'Set of questions and answers for this component (category) field.'
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -24,9 +24,12 @@ settings:
       question: question
     target_bundles_drag_drop:
       answer:
-        weight: 3
+        weight: 4
+        enabled: false
+      component:
+        weight: 5
         enabled: false
       question:
         enabled: true
-        weight: 4
+        weight: 6
 field_type: entity_reference_revisions

@@ -11,7 +11,7 @@ entity_type: paragraph
 bundle: answer
 label: Score
 description: 'The score associated with this answer.'
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

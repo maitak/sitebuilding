@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.survey.body
-    - field.field.node.survey.field_question_answer_set
+    - field.field.node.survey.field_component
     - node.type.survey
   module:
     - entity_reference_revisions
@@ -21,7 +21,7 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
-  field_question_answer_set:
+  field_component:
     type: entity_reference_revisions_entity_view
     weight: 102
     label: above
@@ -31,4 +31,6 @@ content:
     third_party_settings: {  }
   links:
     weight: 100
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }

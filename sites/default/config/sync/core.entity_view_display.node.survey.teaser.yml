@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.survey.body
+    - field.field.node.survey.field_component
     - node.type.survey
   module:
     - text
@@ -23,4 +24,5 @@ content:
     third_party_settings: {  }
   links:
     weight: 100
-hidden: {  }
+hidden:
+  field_component: true
