@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.answer.field_answer
+    - field.field.paragraph.answer.field_discovery
     - field.field.paragraph.answer.field_score
     - paragraphs.paragraphs_type.answer
 id: paragraph.answer.default
@@ -15,7 +16,7 @@ content:
     weight: 0
     label: above
     settings:
-      link_to_entity: false
+      link_to_entity: true
     third_party_settings: {  }
     type: string
   field_score:
@@ -28,4 +29,5 @@ content:
     type: number_integer
 hidden:
   created: true
+  field_discovery: true
   uid: true
