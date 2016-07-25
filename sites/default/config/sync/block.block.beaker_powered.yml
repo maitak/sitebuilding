@@ -1,0 +1,22 @@
+uuid: 71d5f521-4d37-4011-b625-238f74860fbb
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - beaker
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: beaker_powered
+theme: beaker
+region: header
+weight: 10
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

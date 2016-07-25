@@ -1,0 +1,20 @@
+uuid: 1a6f61bf-c67c-4524-95ba-83060623c487
+langcode: en
+status: true
+dependencies:
+  theme:
+    - beaker
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: beaker_page_title
+theme: beaker
+region: content
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

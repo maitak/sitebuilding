@@ -1,0 +1,22 @@
+uuid: 34646c80-f766-4044-9154-5a4249840fd7
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - beaker
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: beaker_content
+theme: beaker
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

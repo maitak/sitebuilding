@@ -1,0 +1,22 @@
+uuid: 276b4b22-b913-47d3-882a-2901fef17bd0
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - beaker
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: beaker_breadcrumbs
+theme: beaker
+region: header
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }
